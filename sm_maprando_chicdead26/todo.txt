@@ -1,0 +1,5 @@
+ To-Do:
+ -Merge all three types of trackers on the same tracker by using lua (no idea how haha)
+ -Get a better picture of Botwoon
+ -Get a better picture of Crocomire
+ -Maybe make better graphics for the metroid rooms? Works better with 64x images or smaller

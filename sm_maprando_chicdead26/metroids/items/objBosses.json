@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Objectives",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "name": "Bosses",
+        "img": "images/obj_bosses.png",
+        "inherit_codes": "false",
+        "codes": "objbosses"
+      }
+    ]
+  }
+]

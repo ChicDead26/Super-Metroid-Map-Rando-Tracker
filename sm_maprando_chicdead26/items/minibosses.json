@@ -1,0 +1,82 @@
+[
+  {
+    "name": "BombTorizo",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Miniboss1E.png"
+      },
+      {
+        "img": "images/Miniboss1D.png",
+        "img_mods": "@disabled",
+        "codes": "bombtorizo"
+      }
+    ]
+  },
+  {
+    "name": "SporeSpawn",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Miniboss2E.png"
+      },
+      {
+        "img": "images/Miniboss2D.png",
+        "img_mods": "@disabled",
+        "codes": "sporespawn"
+      }
+    ]
+  },
+  {
+    "name": "Crocomire",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Miniboss3E.png"
+      },
+      {
+        "img": "images/Miniboss3D.png",
+        "img_mods": "@disabled",
+        "codes": "crocomire"
+      }
+    ]
+  },
+  {
+    "name": "Botwoon",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Miniboss4E.png"
+      },
+      {
+        "img": "images/Miniboss4D.png",
+        "img_mods": "@disabled",
+        "codes": "botwoon"
+      }
+    ]
+  },
+  {
+    "name": "GoldenTorizo",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Miniboss5E.png"
+      },
+      {
+        "img": "images/Miniboss5D.png",
+        "img_mods": "@disabled",
+        "codes": "goldentorizo"
+      }
+    ]
+  }
+]

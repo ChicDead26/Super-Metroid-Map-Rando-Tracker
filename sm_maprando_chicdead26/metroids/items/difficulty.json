@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Difficulty",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "name": "Easy",
+        "img": "images/diff_easy.png",
+        "inherit_codes": "false",
+        "codes": "difficulty, easy"
+      },
+      {
+        "name": "Normal",
+        "img": "images/diff_normal.png",
+        "inherit_codes": "false",
+        "codes": "normal"
+      },
+      {
+        "name": "Hard",
+        "img": "images/diff_hard.png",
+        "inherit_codes": "false",
+        "codes": "hard"
+      },
+      {
+        "name": "VeryHard",
+        "img": "images/diff_veryhard.png",
+        "inherit_codes": "false",
+        "codes": "veryhard"
+      },
+      {
+        "name": "Expert",
+        "img": "images/diff_expert.png",
+        "inherit_codes": "false",
+        "codes": "expert"
+      },
+      {
+        "name": "Extreme",
+        "img": "images/diff_extreme.png",
+        "inherit_codes": "false",
+        "codes": "extreme"
+      },
+      {
+        "name": "Insane",
+        "img": "images/diff_insane.png",
+        "inherit_codes": "false",
+        "codes": "insane"
+      }
+    ]
+  }
+]

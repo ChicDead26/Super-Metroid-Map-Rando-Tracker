@@ -1,0 +1,140 @@
+﻿{
+  "tracker_broadcast": {
+    "type": "array",
+    "orientation": "vertical",
+    "margin": "0,0",
+    "content": [
+      {
+        "type": "array",
+        "orientation": "horizontal",
+        "margin": "0,0",
+        "content": [
+          {
+
+            "type": "array",
+            "orientation": "vertical",
+            "margin": "0,0",
+            "content": [
+              {
+
+                "type": "item",
+                "item": "objectiveSwitch", //objectives
+                "h_alignment": "center",
+                "margin": "0,8,0,0"
+
+              },
+              //{
+              //  "type": "itemgrid",
+              //  "item_margin": "6,5",
+              //  "h_alignment": "center",
+              //  "rows": [
+              //    [ "ridley" ],
+              //    [ "phantoon" ],
+              //    [ "kraid" ],
+              //    [ "draygon" ]
+              //  ]
+              //}
+              {
+                "type": "itemgrid",
+                "item_margin": "6,5",
+                "h_alignment": "center",
+                "rows": [
+                  [ "sporespawn" ],
+                  [ "crocomire" ],
+                  [ "botwoon" ],
+                  [ "goldentorizo" ]
+                ]
+              }
+              //{
+              //  "type": "itemgrid",
+              //  "item_margin": "6,5",
+              //  "h_alignment": "center",
+              //  "rows": [
+              //    [ "metroids1" ],
+              //    [ "metroids2" ],
+              //    [ "metroids3" ],
+              //    [ "metroids4" ]
+              //  ]
+              //}
+            ]
+          },
+          {
+            "type": "itemgrid",
+            "item_margin": "6,1",
+            "h_alignment": "left",
+            "margin": "0,15,0,0",
+            "rows": [
+              [ "charge", "varia", "morph", "hijump" ],
+              [ "ice", "gravity", "bomb", "space" ],
+              [ "wave", "", "spring", "speed" ],
+              [ "spazer", "grapple", "screw", "" ],
+              [ "plasma", "xray", "", "" ]
+            ]
+          },
+          {
+            "type": "array",
+            "orientation": "vertical",
+            "v_alignment": "center",
+            "margin": "5,10,0,0",
+            "content": [
+              {
+                "type": "itemgrid",
+                "margin": "0,5",
+                "item_margin": "2,0",
+                "h_alignment": "center",
+                "rows": [
+                  [ "missile", "supermissile", "powerbomb" ]
+                ]
+              },
+              {
+                "type": "itemgrid",
+                "margin": "0,4,0,0",
+                "item_margin": "2,0",
+                "h_alignment": "center",
+                "rows": [
+                  [ "etank", "reservetank" ]
+                ]
+              },
+              {
+                "type": "itemgrid",
+                "margin": "0,25,0,0",
+                "item_margin": "2,0",
+                "h_alignment": "center",
+                "rows": [
+                  [ "bombtorizo", "optionalphantoon" ]
+                ]
+              }
+
+            ]
+          },
+          {
+            "type": "array",
+            "orientation": "vertical",
+            "v_alignment": "center",
+            "margin": "5,0,0,0",
+            "content": [
+              {
+                "type": "item",
+                "item": "difficulty",
+                "h_alignment": "right",
+                "margin": "0,8,0,0"
+              },
+              {
+                "type": "item",
+                "item": "itemprogression",
+                "h_alignment": "right",
+                "margin": "0,8,0,0"
+              },
+              {
+                "type": "item",
+                "item": "qualityoflife",
+                "h_alignment": "right",
+                "margin": "0,8,0,0"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

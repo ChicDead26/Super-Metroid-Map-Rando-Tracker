@@ -1,0 +1,28 @@
+[
+  {
+    "name": "QualityOfLife",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "name": "No",
+        "img": "images/qol_no.png",
+        "inherit_codes": "false",
+        "codes": "qualityoflife, no"
+      },
+      {
+        "name": "Default",
+        "img": "images/qol_default.png",
+        "inherit_codes": "false",
+        "codes": "default"
+      },
+      {
+        "name": "Max",
+        "img": "images/qol_max.png",
+        "inherit_codes": "false",
+        "codes": "max"
+      }
+    ]
+  }
+]

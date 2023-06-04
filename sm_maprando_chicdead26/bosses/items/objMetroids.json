@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Objectives",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "name": "Metroids",
+        "img": "images/obj_metroids.png",
+        "inherit_codes": "false",
+        "codes": "objmetroids"
+      }
+    ]
+  }
+]

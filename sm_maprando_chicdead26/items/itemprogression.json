@@ -1,0 +1,28 @@
+[
+  {
+    "name": "ItemProgression",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "name": "Quick",
+        "img": "images/prog_quick.png",
+        "inherit_codes": "false",
+        "codes": "itemprogression, quick"
+      },
+      {
+        "name": "Standard",
+        "img": "images/prog_standard.png",
+        "inherit_codes": "false",
+        "codes": "standard"
+      },
+      {
+        "name": "Challenge",
+        "img": "images/prog_challenge.png",
+        "inherit_codes": "false",
+        "codes": "challenge"
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+﻿{
+  "name": "Super Metroid Map Rando",
+  "game_name": "Super Metroid Map Rando",
+  "package_version": "1.0.0.0",
+  "package_uid": "sm_maprando_chicdead26",
+  "author": "ChicDead26, SauceRelic",
+  "variants": {
+    "bosses": {
+      "display_name": "Objective: Bosses"
+    },
+    "minibosses": {
+      "display_name": "Objective: Minibosses"
+    },
+    "metroids": {
+      "display_name": "Objective: Metroids"
+    }
+  }
+}

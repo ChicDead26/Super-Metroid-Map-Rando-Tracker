@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Objectives",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "name": "Bosses",
+        "img": "images/obj_bosses.png",
+        "inherit_codes": "false",
+        "codes": "objectives, bosses"
+      },
+      {
+        "name": "Minibosses",
+        "img": "images/obj_minibosses.png",
+        "inherit_codes": "false",
+        "codes": "minibosses"
+      },
+      {
+        "name": "Metroids",
+        "img": "images/obj_metroids.png",
+        "inherit_codes": "false",
+        "codes": "metroids"
+      }
+    ]
+  }
+]

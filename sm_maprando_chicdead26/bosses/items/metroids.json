@@ -1,0 +1,66 @@
+[
+  {
+    "name": "MetroidRoom1",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Metroids1E.png"
+      },
+      {
+        "img": "images/Metroids1D.png",
+        "img_mods": "@disabled",
+        "codes": "metroids1"
+      }
+    ]
+  },
+  {
+    "name": "MetroidRoom2",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Metroids2E.png"
+      },
+      {
+        "img": "images/Metroids2D.png",
+        "img_mods": "@disabled",
+        "codes": "metroids2"
+      }
+    ]
+  },
+  {
+    "name": "MetroidRoom3",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Metroids3E.png"
+      },
+      {
+        "img": "images/Metroids3D.png",
+        "img_mods": "@disabled",
+        "codes": "metroids3"
+      }
+    ]
+  },
+  {
+    "name": "MetroidRoom4",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Metroids4E.png"
+      },
+      {
+        "img": "images/Metroids4D.png",
+        "img_mods": "@disabled",
+        "codes": "metroids4"
+      }
+    ]
+  }
+]

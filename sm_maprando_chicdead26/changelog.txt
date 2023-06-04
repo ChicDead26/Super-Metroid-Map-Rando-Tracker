@@ -1,0 +1,2 @@
+v1.0.0.0:
+  #Initial release. Made from SauceRelic's Super Metroid Varia.run tracker, which is open source and hosted on SauceRelic/SauceRelic.github.io Please check the To-Do file!

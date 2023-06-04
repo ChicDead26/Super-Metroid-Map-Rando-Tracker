@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Ridley",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Boss1.png"
+      },
+      {
+        "img": "images/Boss1.png",
+        "img_mods": "@disabled",
+        "codes": "ridley,g4"
+      }
+    ]
+  },
+  {
+    "name": "Kraid",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Boss2.png"
+      },
+      {
+        "img": "images/Boss2.png",
+        "img_mods": "@disabled",
+        "codes": "kraid,g4"
+      }
+    ]
+  },
+  {
+    "name": "Phantoon",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Boss3.png"
+      },
+      {
+        "img": "images/Boss3.png",
+        "img_mods": "@disabled",
+        "codes": "phantoon,g4"
+      }
+    ]
+  },
+  {
+    "name": "Draygon",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Boss4.png"
+      },
+      {
+        "img": "images/Boss4.png",
+        "img_mods": "@disabled",
+        "codes": "draygon,g4"
+      }
+    ]
+  }
+]
