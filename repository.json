@@ -1,0 +1,14 @@
+{
+  "name": "ChicDead26's Packages",
+  "packages": [
+    {
+      "name": "Super Metroid Map Rando",
+      "game_name": "Super Metroid Map Rando",
+      "author": "ChicDead26, SauceRelic",
+      "version": "1.0.0.0",
+      "flags": [ "" ],
+      "uid": "sm_maprando_chicdead26",
+      "link": "https://chicdead26.github.io/sm_maprando_chicdead26.zip"
+    }
+  ]
+}
