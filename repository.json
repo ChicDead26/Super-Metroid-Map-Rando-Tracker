@@ -3,24 +3,24 @@
   "packages": [
     {
       "name": "Super Metroid Map Rando",
-      "game_name": "Super Metroid Map Rando",
+      "game_name": "Super Metroid",
       "author": "ChicDead26, SauceRelic",
-      "version": "1.0.0.0",
-      "flags": [ "" ],
+      "version": "1.1.0.0",
+      "flags": [ "chathud" ],
       "uid": "sm_maprando_chicdead26",
       "link": "https://chicdead26.github.io/Super-Metroid-Map-Rando-Tracker/sm_maprando_chicdead26.zip",
       "variants": [
         {
           "name": "Objective: Bosses",
-          "flags": [ "" ]
+          "flags": [ "chathud" ]
         },
         {
           "name": "Objective: Minibosses",
-          "flags": [ "" ]
+          "flags": [ "chathud" ]
         },
         {
           "name": "Objective: Metroids",
-          "flags": [ "" ]
+          "flags": [ "chathud" ]
         }
       ]
     }

@@ -101,7 +101,7 @@
                 "item_margin": "2,0",
                 "h_alignment": "center",
                 "rows": [
-                  [ "bombtorizo", "optionalphantoon" ]
+                  [ "bombtorizo" ]//, "optionalphantoon" ]
                 ]
               }
 

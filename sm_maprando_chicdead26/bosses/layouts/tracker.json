@@ -139,7 +139,7 @@
   },
   "tracker_default": {
     "type": "container",
-    "width": 600,
+    "width": 650,
     "height": 250,
     "h_alignment": "left",
     "background": "#000000",

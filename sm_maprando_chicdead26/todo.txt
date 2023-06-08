@@ -3,3 +3,4 @@
  -Get a better picture of Botwoon
  -Get a better picture of Crocomire
  -Maybe make better graphics for the metroid rooms? Works better with 64x images or smaller
+ -Maybe make a Go Mode toggle? Well, if enough people show interest...
