@@ -17,8 +17,7 @@
             "content": [
               //{
               //  "type": "itemgrid",
-              //  "item_margin": "0,8",
-              //  "margin": "5,8,5,0",
+              //  "item_margin": "6,5",
               //  "h_alignment": "center",
               //  "rows": [
               //    [ "ridley" ],
@@ -27,30 +26,29 @@
               //    [ "draygon" ]
               //  ]
               //}
-              //{
-              //  "type": "itemgrid",
-              //  "item_margin": "0,8",
-              //  "margin": "5,8,5,0",
-              //  "h_alignment": "center",
-              //  "rows": [
-              //    [ "sporespawn" ],
-              //    [ "crocomire" ],
-              //    [ "botwoon" ],
-              //    [ "goldentorizo" ]
-              //  ]
-              //}
               {
                 "type": "itemgrid",
                 "item_margin": "0,8",
                 "margin": "5,8,5,0",
                 "h_alignment": "center",
                 "rows": [
-                  [ "metroids1" ],
-                  [ "metroids2" ],
-                  [ "metroids3" ],
-                  [ "metroids4" ]
+                  [ "bombtorizo" ],
+                  [ "bowlingchozo" ],
+                  [ "acidchozo" ],
+                  [ "goldentorizo" ]
                 ]
               }
+              //{
+              //  "type": "itemgrid",
+              //  "item_margin": "6,5",
+              //  "h_alignment": "center",
+              //  "rows": [
+              //    [ "metroids1" ],
+              //    [ "metroids2" ],
+              //    [ "metroids3" ],
+              //    [ "metroids4" ]
+              //  ]
+              //}
             ]
           },
           {
@@ -121,7 +119,7 @@
 
                 "margin": "0,0,0,20",
                 "type": "item",
-                "item": "objbosses", //objectives
+                "item": "objchozos", //objectives
                 "h_alignment": "center"
               },
               {

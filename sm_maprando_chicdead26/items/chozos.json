@@ -1,0 +1,66 @@
+[
+  //{
+  //  "name": "Bomb Torizo",
+  //  "type": "progressive",
+  //  "allow_disabled": "false",
+  //  "loop": "true",
+  //  "stages": [
+  //    {
+  //      "img": "images/Miniboss1E.png"
+  //    },
+  //    {
+  //      "img": "images/Miniboss1D.png",
+  //      "img_mods": "@disabled",
+  //      "codes": "bombtorizo, chozos"
+  //    }
+  //  ]
+  //},
+  {
+    "name": "Bowling Chozo",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/ChozoStatue1E.png"
+      },
+      {
+        "img": "images/ChozoStatue1D.png",
+        "img_mods": "@disabled",
+        "codes": "bowlingchozo, chozos"
+      }
+    ]
+  },
+  {
+    "name": "Acid Chozo",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/ChozoStatue2E.png"
+      },
+      {
+        "img": "images/ChozoStatue2D.png",
+        "img_mods": "@disabled",
+        "codes": "acidchozo, chozos"
+      }
+    ]
+  }//,
+  //{
+  //  "name": "Golden Torizo",
+  //  "type": "progressive",
+  //  "allow_disabled": "false",
+  //  "loop": "true",
+  //  "stages": [
+  //    {
+  //      "img": "images/Miniboss5E.png"
+  //    },
+  //    {
+  //      "img": "images/Miniboss5D.png",
+  //      "img_mods": "@disabled",
+  //      "codes": "goldentorizo, chozos"
+  //    }
+  //  ]
+  //}
+]

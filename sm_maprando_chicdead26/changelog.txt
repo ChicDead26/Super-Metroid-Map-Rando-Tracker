@@ -1,7 +1,13 @@
+v1.2.0.0:
+  +Added Objective: Chozos, new in v65
+  =Changed the "Planet Awaken" icon to an Eye
+  =Made the tracker A LOT more concise, way better for streaming
+  =Got rid of unnecessary folders
 v1.1.0.0:
   =Changed the name of Easy and Normal to Beginner and Intermediate, following v64's new nominclature. Had to expand the tracker size for that.
   =Changed game name in manifest and repository json files
 v1.0.0.0:
   #Initial release. Made from SauceRelic's Super Metroid Varia.run tracker, which is open source and hosted on SauceRelic/SauceRelic.github.io 
-  Special thanks to papaschmo, from whomst've i rightfully stole some of the settings from; TarThoron, for the idea of having phantoon on the tracker of non-boss objectives; and the EmoTracker discord for putting up with me
+  Special thanks to papaschmo, from whomst've i rightfully stole some of the settings from; TarThoron, for the idea of having phantoon on the tracker of non-boss objectives; the EmoTracker discord for putting up with me,
+  and the Map Rando discord, as well as Oatsngoats' Goat Pen discord, for receiving me well and for all their feedback
   Please check the To-Do file!

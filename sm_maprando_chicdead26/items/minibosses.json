@@ -1,6 +1,6 @@
 [
   {
-    "name": "BombTorizo",
+    "name": "Bomb Torizo",
     "type": "progressive",
     "allow_disabled": "false",
     "loop": "true",
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "name": "SporeSpawn",
+    "name": "Spore Spawn",
     "type": "progressive",
     "allow_disabled": "false",
     "loop": "true",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "name": "GoldenTorizo",
+    "name": "Golden Torizo",
     "type": "progressive",
     "allow_disabled": "false",
     "loop": "true",

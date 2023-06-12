@@ -1,15 +1,15 @@
 [
   {
-    "name": "Objectives",
+    "name": "ObjChozos",
     "type": "progressive",
     "allow_disabled": "false",
     "loop": "true",
     "stages": [
       {
-        "name": "Metroids",
-        "img": "images/obj_metroids.png",
+        "name": "Bosses",
+        "img": "images/obj_chozos.png",
         "inherit_codes": "false",
-        "codes": "objmetroids"
+        "codes": "objchozos"
       }
     ]
   }

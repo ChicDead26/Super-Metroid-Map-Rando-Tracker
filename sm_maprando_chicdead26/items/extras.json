@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Eye",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/EyeE.png"
+      },
+      {
+        "img": "images/EyeD.png",
+        "img_mods": "@disabled",
+        "codes": "eye, extras"
+      }
+    ]
+  }
+]
