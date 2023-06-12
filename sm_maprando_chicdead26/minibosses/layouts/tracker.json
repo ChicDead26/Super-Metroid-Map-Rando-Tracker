@@ -20,7 +20,7 @@
                 "type": "item",
                 "item": "objminibosses", //objectives
                 "h_alignment": "center",
-                "margin": "0,8,0,0"
+                "margin": "0,4,0,0"
 
               },
               //{
@@ -36,7 +36,8 @@
               //}
               {
                 "type": "itemgrid",
-                "item_margin": "6,5",
+                "item_margin": "0,4",
+                "margin": "0,-2,0,0",
                 "h_alignment": "center",
                 "rows": [
                   [ "sporespawn" ],
@@ -60,9 +61,9 @@
           },
           {
             "type": "itemgrid",
-            "item_margin": "6,1",
+            "item_margin": "2,1",
             "h_alignment": "left",
-            "margin": "0,15,0,0",
+            "margin": "0,10,0,0",
             "rows": [
               [ "charge", "varia", "morph", "hijump" ],
               [ "ice", "gravity", "bomb", "space" ],
@@ -73,63 +74,68 @@
           },
           {
             "type": "array",
-            "orientation": "vertical",
-            "v_alignment": "center",
-            "margin": "5,10,0,0",
+            //"orientation": "vertical",
+            //"v_alignment": "center",
+            "h_alignment": "center",
+            "margin": "0,4,0,0",
             "content": [
               {
                 "type": "itemgrid",
-                "margin": "0,5",
-                "item_margin": "2,0",
+                "margin": "4,8,4,0",
+                "item_margin": "0,1",
                 "h_alignment": "center",
                 "rows": [
-                  [ "missile", "supermissile", "powerbomb" ]
+                  //[ "missile", "supermissile", "powerbomb" ]
+                  [ "missile" ],
+                  [ "supermissile" ],
+                  [ "powerbomb" ],
+                  //[ "etank" ],
+                  //[ "reservetank" ]
                 ]
               },
               {
                 "type": "itemgrid",
-                "margin": "0,4,0,0",
-                "item_margin": "2,0",
+                "margin": "0,1,0,0",
+                "item_margin": "0,1",
                 "h_alignment": "center",
                 "rows": [
-                  [ "etank", "reservetank" ]
+                  //[ "etank", "reservetank" ]
+                  [ "etank" ],
+                  [ "reservetank" ]
                 ]
-              },
+              }
+            ]
+          },
               {
                 "type": "itemgrid",
-                "margin": "0,25,0,0",
+                "margin": "-85,90,0,0",
                 "item_margin": "2,0",
                 "h_alignment": "center",
                 "rows": [
                   [ "bombtorizo", "phantoon" ]
                 ]
-              }
+              },
 
-            ]
-          },
           {
             "type": "array",
             "orientation": "vertical",
             "v_alignment": "center",
-            "margin": "5,0,0,0",
+            "margin": "0,0,0,0",
             "content": [
               {
                 "type": "item",
                 "item": "difficulty",
-                "h_alignment": "right",
-                "margin": "0,8,0,0"
+                "h_alignment": "right"
               },
               {
                 "type": "item",
                 "item": "itemprogression",
-                "h_alignment": "right",
-                "margin": "0,8,0,0"
+                "h_alignment": "right"
               },
               {
                 "type": "item",
                 "item": "qualityoflife",
-                "h_alignment": "right",
-                "margin": "0,8,0,0"
+                "h_alignment": "right"
               }
             ]
           }
@@ -139,8 +145,8 @@
   },
   "tracker_default": {
     "type": "container",
-    "width": 650,
-    "height": 250,
+    "width": 540,
+    "height": 220,
     "h_alignment": "left",
     "background": "#000000",
     "content": {
