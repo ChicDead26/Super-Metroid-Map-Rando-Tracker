@@ -21,6 +21,10 @@
         {
           "name": "Objective: Metroids",
           "flags": [ "chathud" ]
+        },
+        {
+          "name": "Objective: Chozos",
+          "flags": [ "chathud" ]
         }
       ]
     }
