@@ -1,8 +1,10 @@
+v1.2.0.1:
+  =Fixed an issue where the "Planet Awaken" icon wasn't appearing (Thank you for the fix, codemann8!)
 v1.2.0.0:
   +Added Objective: Chozos, new in v65
   =Changed the "Planet Awaken" icon to an Eye
   =Made the tracker A LOT more concise, way better for streaming
-  =Got rid of unnecessary folders
+  -Got rid of unnecessary folders
 v1.1.0.0:
   =Changed the name of Easy and Normal to Beginner and Intermediate, following v64's new nominclature. Had to expand the tracker size for that.
   =Changed game name in manifest and repository json files
