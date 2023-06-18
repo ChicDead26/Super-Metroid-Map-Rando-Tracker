@@ -6,16 +6,16 @@
     "loop": "true",
     "stages": [
       {
-        "name": "Beginner",
-        "img": "images/diff_beginner.png",
+        "name": "Basic",
+        "img": "images/diff_basic.png",
         "inherit_codes": "false",
-        "codes": "difficulty, beginner"
+        "codes": "difficulty, basic"
       },
       {
-        "name": "Intermediate",
-        "img": "images/diff_intermediate.png",
+        "name": "Medium",
+        "img": "images/diff_medium.png",
         "inherit_codes": "false",
-        "codes": "intermediate"
+        "codes": "medium"
       },
       {
         "name": "Hard",

@@ -1,3 +1,7 @@
+v1.2.1.0:
+  =Changed to name of Beginner and Intermediate to Basic and Medium, which is how they're named since v67
+  =Made a small (yet significant!) change to the dead Crocomire icon
+  =Fixed the "Metroids" objective actually displaying "Bosses" instead. Woops.
 v1.2.0.1:
   =Fixed an issue where the "Planet Awaken" icon wasn't appearing (Thank you for the fix, codemann8!)
 v1.2.0.0:
