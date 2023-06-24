@@ -6,10 +6,16 @@
     "loop": "true",
     "stages": [
       {
-        "name": "No",
-        "img": "images/qol_no.png",
+        "name": "Off",
+        "img": "images/qol_off.png",
         "inherit_codes": "false",
-        "codes": "qualityoflife, no"
+        "codes": "qualityoflife, off"
+      },
+      {
+        "name": "Low",
+        "img": "images/qol_low.png",
+        "inherit_codes": "false",
+        "codes": "low"
       },
       {
         "name": "Default",

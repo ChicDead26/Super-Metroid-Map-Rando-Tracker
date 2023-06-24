@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Pit Pirates",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Pirate1.png"
+      },
+      {
+        "img": "images/Pirate1.png",
+        "img_mods": "@disabled",
+        "codes": "pitpirates"
+      }
+    ]
+  },
+  {
+    "name": "Baby Kraid Pirates",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Pirate2.png"
+      },
+      {
+        "img": "images/Pirate2.png",
+        "img_mods": "@disabled",
+        "codes": "babykraidpirates"
+      }
+    ]
+  },
+  {
+    "name": "Plasma Pirates",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Pirate3.png"
+      },
+      {
+        "img": "images/Pirate3.png",
+        "img_mods": "@disabled",
+        "codes": "plasmapirates"
+      }
+    ]
+  },
+  {
+    "name": "Metal Pirates",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Pirate4.png"
+      },
+      {
+        "img": "images/Pirate4.png",
+        "img_mods": "@disabled",
+        "codes": "metalpirates"
+      }
+    ]
+  }
+]

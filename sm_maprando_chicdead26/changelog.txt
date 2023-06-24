@@ -1,3 +1,7 @@
+v1.3.0.0
+  +Added new "Pirates" objective, new in v68. Special thank to Map Rando dev kyleb for the Space Pirate icons!
+  +Added new "Low" Quality of Life option.
+  =Renamed "No" Quality of Life to "Off".
 v1.2.1.0:
   =Changed to name of Beginner and Intermediate to Basic and Medium, which is how they're named since v67
   =Made a small (yet significant!) change to the dead Crocomire icon

@@ -1,7 +1,7 @@
 ﻿{
   "name": "Super Metroid Map Rando",
   "game_name": "Super Metroid",
-  "package_version": "1.2.1.0",
+  "package_version": "1.3.0.0",
   "package_uid": "sm_maprando_chicdead26",
   "author": "ChicDead26, SauceRelic",
   "variants": {
@@ -16,6 +16,9 @@
     },
     "chozos": {
       "display_name": "Objective: Chozos"
+    },
+    "pirates": {
+      "display_name": "Objective: Pirates"
     }
   }
 }
