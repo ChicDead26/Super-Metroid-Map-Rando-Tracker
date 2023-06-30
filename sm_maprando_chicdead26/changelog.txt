@@ -1,3 +1,6 @@
+v1.4.0.0
+  +Autotracker is now live! Keep in mind that pirates objectives as well as the bowling chozo have not been tested. Please report bugs!
+  Special thanks to PapaSchmo for letting me use and adapt his autotracker script.
 v1.3.0.0
   +Added new "Pirates" objective, new in v68. Special thank to Map Rando dev kyleb for the Space Pirate icons!
   +Added new "Low" Quality of Life option.
