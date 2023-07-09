@@ -1,3 +1,6 @@
+v1.4.0.1
+  =Likely fixed a minor issue with autotracker not updating on death/reload
+  =Removed several unnecessary files
 v1.4.0.0
   +Autotracker is now live! Keep in mind that pirates objectives as well as the bowling chozo have not been tested. Please report bugs!
   Special thanks to PapaSchmo for letting me use and adapt his autotracker script.

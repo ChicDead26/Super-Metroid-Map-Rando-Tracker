@@ -1,11 +1,6 @@
 ScriptHost:LoadScript("scripts/settings.lua")
 
 Tracker:AddItems("items/objectives.json")
-Tracker:AddItems("items/objBosses.json")
-Tracker:AddItems("items/objMinibosses.json")
-Tracker:AddItems("items/objMetroids.json")
-Tracker:AddItems("items/objChozos.json")
-Tracker:AddItems("items/objPirates.json")
 Tracker:AddItems("items/difficulty.json")
 Tracker:AddItems("items/itemprogression.json")
 Tracker:AddItems("items/qualityoflife.json")

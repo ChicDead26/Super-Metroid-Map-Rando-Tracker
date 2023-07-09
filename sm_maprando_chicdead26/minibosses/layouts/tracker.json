@@ -119,7 +119,7 @@
 
                 "margin": "0,0,0,20",
                 "type": "item",
-                "item": "objminibosses", //objectives
+                "item": "minibosses", //objectives
                 "h_alignment": "center"
               },
               {

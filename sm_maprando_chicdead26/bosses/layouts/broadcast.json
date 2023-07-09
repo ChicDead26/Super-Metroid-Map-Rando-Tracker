@@ -128,7 +128,7 @@
 
                     "margin": "0,0,0,20",
                     "type": "item",
-                    "item": "objbosses", //objectives
+                    "item": "bosses", //objectives
                     "h_alignment": "center"
                   },
                   {

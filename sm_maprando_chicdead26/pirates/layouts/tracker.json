@@ -96,7 +96,7 @@
 
                 "margin": "0,0,0,20",
                 "type": "item",
-                "item": "objpirates", //objectives
+                "item": "pirates", //objectives
                 "h_alignment": "center"
               },
               {

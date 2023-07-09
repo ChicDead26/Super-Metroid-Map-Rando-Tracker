@@ -128,7 +128,7 @@
 
                     "margin": "0,0,0,20",
                     "type": "item",
-                    "item": "objmetroids", //objectives
+                    "item": "metroids", //objectives
                     "h_alignment": "center"
                   },
                   {

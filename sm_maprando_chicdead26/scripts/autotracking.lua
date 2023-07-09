@@ -52,7 +52,7 @@ end
 function isInGame()
     local mainModuleIdx = AutoTracker:ReadU8(0x7e0998, 0)
 
-    local inGame = (mainModuleIdx >= 0x07 and mainModuleIdx <= 0x12)
+    local inGame = (mainModuleIdx >= 0x06 and mainModuleIdx <= 0x12)
     if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
         print("*** In-game Status: ", '0x7e0998', string.format('0x%x', mainModuleIdx), inGame)
     end

@@ -126,7 +126,7 @@
 
                     "margin": "0,0,0,20",
                     "type": "item",
-                    "item": "objchozos", //objectives
+                    "item": "chozos", //objectives
                     "h_alignment": "center"
                   },
                   {
