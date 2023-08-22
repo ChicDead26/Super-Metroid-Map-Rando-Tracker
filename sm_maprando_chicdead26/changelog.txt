@@ -1,3 +1,7 @@
+v1.4.1.0
+  =Overhauled the Metroid Room sprites. Changed them into more abstract representation of the rooms, instead of using screenshots.
+  =Fixed small misalignment issues with the Space Pirates sprites
+  =Fixed Botwoon's sprite palette issues
 v1.4.0.1
   =Likely fixed a minor issue with autotracker not updating on death/reload
   =Removed several unnecessary files
