@@ -111,7 +111,7 @@
             "type": "array",
             "orientation": "vertical",
             "v_alignment": "center",
-            "margin": "5,0,0,0",
+            "margin": "2,0,0,0",
             "content": [
               {
                 "type": "item",
@@ -139,7 +139,7 @@
   },
   "tracker_default": {
     "type": "container",
-    "width": 650,
+    "width": 640,
     "height": 250,
     "h_alignment": "left",
     "background": "#000000",

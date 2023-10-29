@@ -6,16 +6,16 @@
     "loop": "true",
     "stages": [
       {
-        "name": "Quick",
-        "img": "images/prog_quick.png",
+        "name": "Normal",
+        "img": "images/prog_normal.png",
         "inherit_codes": "false",
-        "codes": "itemprogression, quick"
+        "codes": "itemprogression, normal"
       },
       {
-        "name": "Standard",
-        "img": "images/prog_standard.png",
+        "name": "Tricky",
+        "img": "images/prog_tricky.png",
         "inherit_codes": "false",
-        "codes": "standard"
+        "codes": "tricky"
       },
       {
         "name": "Challenge",
