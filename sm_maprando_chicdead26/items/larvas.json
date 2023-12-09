@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Metroid Larvas Collected",
+    "type": "consumable",
+    "img": "images/larva.png",
+    "max_quantity": 400,
+    "increment": 1,
+    "codes": "larva"
+  }
+]

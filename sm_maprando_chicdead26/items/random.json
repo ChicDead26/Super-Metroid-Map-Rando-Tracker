@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Random1",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Random1.png"
+      },
+      {
+        "img": "images/Random1.png",
+        "img_mods": "@disabled",
+        "codes": "random1"
+      }
+    ]
+  },
+  {
+    "name": "Random2",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Random2.png"
+      },
+      {
+        "img": "images/Random2.png",
+        "img_mods": "@disabled",
+        "codes": "random2"
+      }
+    ]
+  },
+  {
+    "name": "Random3",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Random3.png"
+      },
+      {
+        "img": "images/Random3.png",
+        "img_mods": "@disabled",
+        "codes": "random3"
+      }
+    ]
+  },
+  {
+    "name": "Random4",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/Random4.png"
+      },
+      {
+        "img": "images/Random4.png",
+        "img_mods": "@disabled",
+        "codes": "random4"
+      }
+    ]
+  }
+]

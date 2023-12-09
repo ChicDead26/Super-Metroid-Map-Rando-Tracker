@@ -21,10 +21,10 @@
                 "margin": "5,8,5,0",
                 "h_alignment": "center",
                 "rows": [
-                  [ "metroids1" ],
-                  [ "metroids2" ],
-                  [ "metroids3" ],
-                  [ "metroids4" ]
+                  [ "random1" ],
+                  [ "random2" ],
+                  [ "random3" ],
+                  [ "random4" ]
                 ]
               }
             ]

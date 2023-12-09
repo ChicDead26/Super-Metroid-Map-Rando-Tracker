@@ -1,7 +1,8 @@
  To-Do:
- -Merge all three types of trackers on the same tracker by using lua (no idea how haha) -> Help me EmoSaru
+ -Merge all three types of trackers on the same tracker by using lua (no idea how haha) -> Maybe in the far away future. Maybe.
  -Get a better picture of Botwoon -> Improved but wrong palette on the head -> DONE
  -Get a better picture of Crocomire -> DONE
  -Maybe make better graphics for the metroid rooms? Works better with 64x images or smaller -> DONE
  -Maybe make a Go Mode toggle? Well, if enough people show interest... -> Uhh probably not. Go Mode is better for games where it isn't clear if you're in go mode or not, but SM has 4 mains conditions.
  -Make the Chozos objective -> DONE
+ -Fix the errors that pop up when you start a tracker variation with the Lua items

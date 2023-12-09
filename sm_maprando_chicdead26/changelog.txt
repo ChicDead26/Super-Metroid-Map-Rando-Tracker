@@ -1,3 +1,9 @@
+v1.5.0.0
+  +Added new Full Tracker variant, showing every tracker item on a single tracker
+  +Added new item for tracking the Can Walljump option
+  +Added new item for tracking the optional Walljump Boots item
+  +Added new item for tracking the Map Layout option
+  +Added new buttons that allow you to customize your tracker by making some new and old items optional
 v1.4.2.0
   =Changed Item Progression setting "Quick" to "Normal"
   =Changed Item Progression setting "Standard" to "Tricky"

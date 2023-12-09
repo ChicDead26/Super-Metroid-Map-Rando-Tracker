@@ -2,9 +2,10 @@
   "tracker_broadcast": {
     "type": "array",
     "orientation": "vertical",
+    "background": "#000000",
     "margin": "0,0",
     "width": 400,
-    "height": 220,
+    "height": 230,
     "content": [
       {
         "type": "array",
@@ -45,7 +46,7 @@
                   [ "charge", "varia", "morph", "hijump" ],
                   [ "ice", "gravity", "bomb", "space" ],
                   [ "wave", "", "spring", "speed" ],
-                  [ "spazer", "grapple", "screw", "" ],
+                  [ "spazer", "grapple", "screw", "walljumpBoots" ],
                   [ "plasma", "xray", "", "" ]
                 ]
               },
@@ -85,45 +86,60 @@
               },
               {
                 "type": "itemgrid",
-                "margin": "-85,90,0,0",
-                "item_margin": "2,0",
+                "margin": "-95,95,0,0",
+                "item_margin": "5,1",
                 "h_alignment": "center",
                 "rows": [
-                  [ "eye", "phantoon" ]
+                  [ "eye", "phantoon", "canWalljump" ]
                 ]
               },
-
               {
-                "type": "array",
+                "type": "itemgrid",
                 "orientation": "vertical",
                 //"v_alignment": "center",
                 "h_alignment": "center",
-                "margin": "-10,8,0,0",
-                "content": [
-                  {
-
-                    "margin": "0,0,0,20",
-                    "type": "item",
-                    "item": "pirates", //objectives
-                    "h_alignment": "center"
-                  },
-                  {
-                    "type": "item",
-                    "item": "difficulty",
-                    "h_alignment": "right"
-                  },
-                  {
-                    "type": "item",
-                    "item": "itemprogression",
-                    "h_alignment": "right"
-                  },
-                  {
-                    "type": "item",
-                    "item": "qualityoflife",
-                    "h_alignment": "right"
-                  }
+                "item_size": "175",
+                "item_margin": "0,-65",
+                "margin": "-5,35,0,0",
+                "rows": [
+                  [ "pirates" ],
+                  [ "difficulty" ],
+                  [ "itemprogression" ],
+                  [ "qualityoflife" ],
+                  [ "maplayout" ]
                 ]
               }
+                //{
+                //  "type": "array",
+                //  "orientation": "vertical",
+                //  //"v_alignment": "center",
+                //  "h_alignment": "center",
+                //  "margin": "-10,8,0,0",
+                //  "content": [
+                //    {
+                //
+                //      "margin": "0,0,0,20",
+                //      "type": "item",
+                //      "item": "pirates", //objectives
+                //      "h_alignment": "center"
+                //    },
+                //    {
+                //      "type": "item",
+                //      "item": "difficulty",
+                //      "h_alignment": "right"
+                //    },
+                //    {
+                //      "type": "item",
+                //      "item": "itemprogression",
+                //      "h_alignment": "right"
+                //    },
+                //    {
+                //      "type": "item",
+                //      "item": "qualityoflife",
+                //      "h_alignment": "right"
+                //    }
+                //  ]
+                //}
             ]
           }
         ]

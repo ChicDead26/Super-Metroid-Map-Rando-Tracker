@@ -18,13 +18,95 @@
               {
                 "type": "itemgrid",
                 "item_margin": "0,8",
-                "margin": "5,8,5,0",
+                "margin": "5,8,1,0",
+                "h_alignment": "center",
+                "rows": [
+                  [ "ridley" ],
+                  [ "phantoon" ],
+                  [ "kraid" ],
+                  [ "draygon" ]
+                ]
+              }
+            ]
+          },
+          {
+
+            "type": "array",
+            "orientation": "vertical",
+            "margin": "0,0",
+            "content": [
+              {
+                "type": "itemgrid",
+                "item_margin": "0,8",
+                "margin": "1,8,1,0",
+                "h_alignment": "center",
+                "rows": [
+                  [ "sporespawn" ],
+                  [ "crocomire" ],
+                  [ "botwoon" ],
+                  [ "goldentorizo" ]
+                ]
+              }
+            ]
+          },
+          {
+
+            "type": "array",
+            "orientation": "vertical",
+            //"v_alignment": "center",
+            "margin": "0,0",
+            "content": [
+              {
+                "type": "itemgrid",
+                "item_margin": "0,8",
+                "margin": "1,8,1,0",
+                "h_alignment": "center",
+                "rows": [
+                  [ "bombtorizo" ],
+                  [ "bowlingchozo" ],
+                  [ "acidchozo" ]
+                  //[ "larva" ]
+                  //[ "goldentorizo" ]
+                ]
+              }
+            ]
+          },
+          {
+
+            "type": "array",
+            "orientation": "vertical",
+            "margin": "0,0",
+            "content": [
+              {
+                "type": "itemgrid",
+                "item_margin": "0,8",
+                "margin": "1,8,1,0",
                 "h_alignment": "center",
                 "rows": [
                   [ "metroids1" ],
                   [ "metroids2" ],
                   [ "metroids3" ],
                   [ "metroids4" ]
+                ]
+              }
+            ]
+          },
+          {
+
+            "type": "array",
+            "orientation": "vertical",
+            "margin": "0,0",
+            "content": [
+              {
+                "type": "itemgrid",
+                "item_margin": "0,8",
+                "margin": "1,8,5,0",
+                "h_alignment": "center",
+                "rows": [
+                  [ "pitpirates" ],
+                  [ "babykraidpirates" ],
+                  [ "plasmapirates" ],
+                  [ "metalpirates" ]
                 ]
               }
             ]
@@ -78,11 +160,11 @@
           },
           {
             "type": "itemgrid",
-            "margin": "-78,95,0,0",
+            "margin": "-60,95,0,0",
             "item_margin": "2,1",
             "h_alignment": "left",
             "rows": [
-              [ "eye", "phantoon", "canWalljump" ]
+              [ "eye", "canWalljump" ]
             ]
           },
           {
@@ -94,87 +176,11 @@
             "item_margin": "0,-65",
             "margin": "-5,35,0,0",
             "rows": [
-              [ "pirates" ],
+              [ "objectives" ],
               [ "difficulty" ],
               [ "itemprogression" ],
               [ "qualityoflife" ],
               [ "maplayout" ]
-            ]
-            //"content": [
-            //  {
-            //    "size": "min_width",
-            //    "margin": "0,0,0,10",
-            //    "type": "item",
-            //    "item": "pirates", //objectives
-            //    "h_alignment": "center"
-            //  },
-            //  {
-            //    "size": "1,1,1,1",
-            //    "type": "item",
-            //    "item": "difficulty",
-            //    "h_alignment": "right"
-            //  },
-            //  {
-            //    "type": "item",
-            //    "item": "itemprogression",
-            //    "h_alignment": "right"
-            //  },
-            //  {
-            //    "type": "item",
-            //    "item": "qualityoflife",
-            //    "h_alignment": "right"
-            //  },
-            //  {
-            //    "type": "item",
-            //    "item": "maplayout",
-            //    "h_alignment": "right"
-            //  }
-            //]
-          },
-          {
-            "type": "array",
-            "orientation": "vertical",
-            //"v_alignment": "right",
-            "h_alignment": "left",
-            "margin": "0,8,0,0",
-            "item_margin": "2,1",
-            //"rows": [
-            //  [ "toggleEye" ],
-            //  [ "togglePhantoon" ],
-            //  [ "toggleWalljumpBoots" ]
-            //]
-            "content": [
-              {
-
-                "margin": "-12,0,0,0",
-                "type": "item",
-                "item": "toggleEye",
-                "h_alignment": "left"
-              },
-              {
-                "type": "item",
-                "item": "togglePhantoon",
-                "h_alignment": "left"
-              },
-              {
-                "margin": "-16,0,0,0",
-                "type": "item",
-                "item": "toggleCanWalljump",
-                "h_alignment": "left"
-              },
-              {
-                "margin": "-8,0,0,0",
-                "type": "item",
-                "item": "toggleWalljumpBoots",
-                "h_alignment": "left"
-              },
-              {
-                "margin": "-8,100,0,0",
-                "type": "item",
-                "item": "tooltip",
-                "h_alignment": "left",
-                "v_alignment": "up"
-              }
             ]
           }
         ]
@@ -183,7 +189,7 @@
   },
   "tracker_default": {
     "type": "container",
-    "width": 675,
+    "width": 550,
     "height": 230,
     "h_alignment": "left",
     "background": "#000000",

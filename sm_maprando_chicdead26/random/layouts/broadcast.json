@@ -29,10 +29,10 @@
                     "margin": "5,8,5,0",
                     "h_alignment": "center",
                     "rows": [
-                      [ "ridley" ],
-                      [ "phantoon" ],
-                      [ "kraid" ],
-                      [ "draygon" ]
+                      [ "random1" ],
+                      [ "random2" ],
+                      [ "random3" ],
+                      [ "random4" ]
                     ]
                   }
                 ]
@@ -90,7 +90,7 @@
                 "item_margin": "2,1",
                 "h_alignment": "left",
                 "rows": [
-                  [ "eye", "canWalljump" ]
+                  [ "eye", "phantoon", "canWalljump" ]
                 ]
               },
               {

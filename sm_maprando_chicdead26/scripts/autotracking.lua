@@ -149,17 +149,47 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
           hasChargeBeam = true
       end
         elseif flagTest ~= 0 then
-            --if  code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then
+            print(item.Name)
+
+            if item.Name == "ToggleWalljumpBoots" then
+
+                toggleWalljumpBoots:setActive(true)
+                return
+            end
+
+            if item.Name == "CanWalljump" then
+                toggleCanWalljump:setActive(true)
+                item.CurrentStage = 1
+                local canWalljumpItem = Tracker:FindObjectForCode(code)
+                canWalljumpItem.Active = true
+
+                return
+            end
+
             if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or code == "eye" then
-                item.CurrentStage = 1--1 == false, off
+                item.CurrentStage = 1
             elseif code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then
                 item.Active = true
             else
                 --item.Active = false
             end
         else
+            if item.Name == "ToggleWalljumpBoots" then
+                toggleWalljumpBoots:setActive(false)
+                return 
+            end
+
+            if item.Name == "CanWalljump" then
+                toggleCanWalljump:setActive(false)
+                item.Active = 2
+                local canWalljumpItem = Tracker:FindObjectForCode(code)
+                canWalljumpItem.Active = false
+
+                return
+            end
+
             if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or code == "eye" then
-                item.CurrentStage = 0--1 == false, off
+                item.CurrentStage = 0
             elseif code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then
                 item.Active = false
             else
@@ -182,6 +212,8 @@ function updateItems(segment)
         InvalidateReadCaches()
         local address = 0x7e09a2
 
+        updateToggleItemFromByteAndFlag(segment, "charge", address + 0x07, 0x10)
+
         updateToggleItemFromByteAndFlag(segment, "varia", address + 0x02, 0x01)
         updateToggleItemFromByteAndFlag(segment, "spring", address + 0x02, 0x02)
         updateToggleItemFromByteAndFlag(segment, "morph", address + 0x02, 0x04)
@@ -190,6 +222,7 @@ function updateItems(segment)
 
         updateToggleItemFromByteAndFlag(segment, "hijump", address + 0x03, 0x01)
         updateToggleItemFromByteAndFlag(segment, "space", address + 0x03, 0x02)
+        updateToggleItemFromByteAndFlag(segment, "walljumpBoots", address + 0x03, 0x04)
         updateToggleItemFromByteAndFlag(segment, "bomb", address + 0x03, 0x10)
         updateToggleItemFromByteAndFlag(segment, "speed", address + 0x03, 0x20)
         updateToggleItemFromByteAndFlag(segment, "grapple", address + 0x03, 0x40)
@@ -205,6 +238,22 @@ function updateItems(segment)
     end
     return true
 end
+
+function updateToggles(segment)
+    if not isInGame() then
+        return false
+    end
+    if AUTOTRACKER_ENABLE_ITEM_TRACKING then
+        InvalidateReadCaches()
+        local address = 0xDFFF05
+
+        updateToggleItemFromByteAndFlag(segment, "toggleWalljumpBoots", address, 0x01)
+        updateToggleItemFromByteAndFlag(segment, "canWalljump", address, 0x02)
+
+    end
+    return true
+end
+
 
 function updateAmmo(segment)
     if not isInGame() then
@@ -395,6 +444,7 @@ end
 
 
 -- *************************** Setup memory watches
+ScriptHost:AddMemoryWatch("SM ROM Data", 0xDFFF05, 0x01, updateToggles)
 ScriptHost:AddMemoryWatch("SM Item Data", 0x7e09a0, 0x70, updateItems)
 ScriptHost:AddMemoryWatch("SM Ammo Data", 0x7e09c2, 0x16, updateAmmo)
 ScriptHost:AddMemoryWatch("SM Boss Data", 0x7ed820, 0x10, updateBosses)

@@ -14,5 +14,33 @@
         "codes": "eye, extras"
       }
     ]
+  },
+  {
+    "name": "CanWalljump",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/canWalljumpE.png",
+        "codes": "canWalljump, extras"
+      },
+      {
+        "img": "images/canWalljumpD.png"
+        //"img_mods": "@disabled",
+      }
+    ]
+  },
+  {
+    "name": "Tooltip",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "img": "images/OffTracker/tooltip.png",
+        "codes": "tooltip, extras"
+      }
+    ]
   }
 ]

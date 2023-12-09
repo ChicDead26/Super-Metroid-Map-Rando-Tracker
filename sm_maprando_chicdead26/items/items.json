@@ -112,6 +112,13 @@
     "codes": "screw"
   },
   {
+    "name": "Walljump Boots",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/walljumpboots.png",
+    "codes": "walljumpBoots"
+  },
+  {
     "name": "Etanks",
     "type": "consumable",
     "img": "images/etank.png",

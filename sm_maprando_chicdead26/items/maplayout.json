@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Map Layout",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "name": "Vanilla",
+        "img": "images/mapl_vanilla.png",
+        "inherit_codes": "false",
+        "codes": "maplayout, vanilla"
+      },
+      //{
+      //  "name": "Friendly",
+      //  "img": "images/mapl_friendly.png",
+      //  "inherit_codes": "false",
+      //  "codes": "friendly"
+      //},
+      {
+        "name": "Tame",
+        "img": "images/mapl_tame.png",
+        "inherit_codes": "false",
+        "codes": "tame"
+      },
+      {
+        "name": "Wild",
+        "img": "images/mapl_wild.png",
+        "inherit_codes": "false",
+        "codes": "wild"
+      },
+      //{
+      //  "name": "Chaos",
+      //  "img": "images/mapl_chaos.png",
+      //  "inherit_codes": "false",
+      //  "codes": "chaos"
+      //}
+    ]
+  }
+]
