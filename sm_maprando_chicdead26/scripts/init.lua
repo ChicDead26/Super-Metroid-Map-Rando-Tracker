@@ -1,4 +1,6 @@
 ScriptHost:LoadScript("scripts/settings.lua")
+ScriptHost:LoadScript("scripts/class.lua")
+ScriptHost:LoadScript("scripts/custom_item.lua")
 ScriptHost:LoadScript("scripts/toggleToggle.lua")
 ScriptHost:LoadScript("scripts/toggleProgressive.lua")
 
