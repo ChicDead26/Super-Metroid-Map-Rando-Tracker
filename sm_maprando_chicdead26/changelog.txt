@@ -1,3 +1,5 @@
+v1.5.0.1
+  =Fixed Tracker variants all showing "Obejctive: Pirates". Sorry Oats!
 v1.5.0.0
   +Added new Full Tracker variant, showing every tracker item on a single tracker
   +Added new item for tracking the Can Walljump option
