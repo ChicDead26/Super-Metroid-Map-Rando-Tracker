@@ -1,4 +1,6 @@
 ScriptHost:LoadScript("scripts/settings.lua")
+ScriptHost:LoadScript("scripts/class.lua")
+ScriptHost:LoadScript("scripts/custom_item.lua")
 ScriptHost:LoadScript("scripts/toggleToggle.lua")
 ScriptHost:LoadScript("scripts/toggleProgressive.lua")
 
@@ -18,7 +20,7 @@ Tracker:AddItems("items/larvas.json")
 Tracker:AddItems("items/extras.json")
 
 if Tracker.ActiveVariantUID ~= "full" then
-    toggleEye = ToggleToggle("ToggleEye", "toggleEye", "images/OffTracker/togglePlanetAwakenYes.png", "images/OffTracker/togglePlanetAwakenNo.png", "eye", "images/eyeE.png", true, 2)
+    toggleEye = ToggleToggle("ToggleEye", "toggleEye", "images/OffTracker/togglePlanetAwakenYes.png", "images/OffTracker/togglePlanetAwakenNo.png", "eye", "images/EyeE.png", true, 2)
 
     if Tracker.ActiveVariantUID ~= "boss" then
         togglePhantoon = ToggleToggle("TogglePhantoon", "togglePhantoon", "images/OffTracker/toggleOptionalPhantoonYes.png", "images/OffTracker/toggleOptionalPhantoonNo.png", "phantoon", "images/Boss3.png", true, 2)
