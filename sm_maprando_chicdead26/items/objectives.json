@@ -70,6 +70,20 @@
     ]
   },
   {
+    "name": "None",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "name": "None",
+        "img": "images/obj_none.png",
+        "inherit_codes": "false",
+        "codes": "none"
+      }
+    ]
+  },
+  {
     "name": "Objectives",
     "type": "progressive",
     "allow_disabled": "false",
@@ -104,6 +118,12 @@
         "img": "images/obj_pirates.png",
         "inherit_codes": "false",
         "codes": "pirate"
+      },
+      {
+        "name": "None",
+        "img": "images/obj_none.png",
+        "inherit_codes": "false",
+        "codes": "non"
       }
     ]
   }
