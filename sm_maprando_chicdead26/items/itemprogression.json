@@ -22,6 +22,12 @@
         "img": "images/prog_challenge.png",
         "inherit_codes": "false",
         "codes": "challenge"
+      },
+      {
+        "name": "Desolate",
+        "img": "images/prog_desolate.png",
+        "inherit_codes": "false",
+        "codes": "desolate"
       }
     ]
   }
