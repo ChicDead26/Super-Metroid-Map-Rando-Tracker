@@ -2,7 +2,7 @@
   "name": "Super Metroid Map Rando",
   "game_name": "Super Metroid",
   "platform": "snes",
-  "package_version": "1.5.2.0",
+  "package_version": "1.6.0.0",
   "package_uid": "sm_maprando_chicdead26",
   "author": "ChicDead26, SauceRelic",
   "variants": {
@@ -24,11 +24,11 @@
     "pirates": {
       "display_name": "Objective: Pirates"
     },
+    "random": {
+      "display_name": "Objective: Random"
+    },
     "none": {
       "display_name": "Objective: None"
     }
-    //"random": {
-    //  "display_name": "Objective: Random"
-    //}
   }
 }

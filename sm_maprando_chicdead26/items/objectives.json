@@ -70,6 +70,20 @@
     ]
   },
   {
+    "name": "Random",
+    "type": "progressive",
+    "allow_disabled": "false",
+    "loop": "true",
+    "stages": [
+      {
+        "name": "Random",
+        "img": "images/obj_random.png",
+        "inherit_codes": "false",
+        "codes": "random"
+      }
+    ]
+  },
+  {
     "name": "None",
     "type": "progressive",
     "allow_disabled": "false",
@@ -118,6 +132,12 @@
         "img": "images/obj_pirates.png",
         "inherit_codes": "false",
         "codes": "pirate"
+      },
+      {
+        "name": "Random",
+        "img": "images/obj_random.png",
+        "inherit_codes": "false",
+        "codes": "rando"
       },
       {
         "name": "None",

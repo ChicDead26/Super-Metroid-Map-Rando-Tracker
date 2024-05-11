@@ -1,3 +1,6 @@
+v1.6.0.0
+  +Added new Random objective
+  =Fixed Full Tracker showing "Objective: Pirates" on broadcast view
 v1.5.2.0
   +Added new Desolate Item Progression setting
 v1.5.1.0
