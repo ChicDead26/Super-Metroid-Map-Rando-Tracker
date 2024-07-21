@@ -1,3 +1,6 @@
+v1.6.0.1
+  =Fixed errors that popped in whenever you opened a tracker that wasn't the Full Tracker
+  =Fixed weird positioning of the Extra Icons. This change is only noticeable in PopTracker
 v1.6.0.0
   +Added new Random objective
   =Fixed Full Tracker showing "Objective: Pirates" on broadcast view

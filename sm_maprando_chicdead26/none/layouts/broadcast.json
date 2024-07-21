@@ -18,16 +18,34 @@
             "margin": "0,0",
             "content": [
               {
-                "type": "itemgrid",
-                "item_margin": "2,1",
-                "h_alignment": "left",
-                "margin": "0,5,0,0",
-                "rows": [
-                  [ "charge", "varia", "morph", "hijump" ],
-                  [ "ice", "gravity", "bomb", "space" ],
-                  [ "wave", "", "spring", "speed" ],
-                  [ "spazer", "grapple", "screw", "walljumpBoots" ],
-                  [ "plasma", "xray", "", "" ]
+                "type": "array",
+                //"orientation": "vertical",
+                //"v_alignment": "center",
+                "h_alignment": "center",
+                "margin": "0,0,0,0",
+                "content": [
+                  {
+                    "type": "itemgrid",
+                    "item_margin": "2,1",
+                    "h_alignment": "left",
+                    "margin": "0,5,0,0",
+                    "rows": [
+                      [ "charge", "varia", "morph", "hijump" ],
+                      [ "ice", "gravity", "bomb", "space" ],
+                      [ "wave", "", "spring", "speed" ],
+                      [ "spazer", "grapple", "screw", "walljumpBoots" ],
+                      [ "plasma", "xray", "", "" ]
+                    ]
+                  },
+                  {
+                    "type": "itemgrid",
+                    "margin": "18,5,0,0",
+                    "item_margin": "2,1",
+                    "h_alignment": "left",
+                    "rows": [
+                      [ "eye", "phantoon", "canWalljump" ]
+                    ]
+                  }
                 ]
               },
               {
@@ -66,15 +84,6 @@
               },
               {
                 "type": "itemgrid",
-                "margin": "-78,95,0,0",
-                "item_margin": "2,1",
-                "h_alignment": "left",
-                "rows": [
-                  [ "eye", "phantoon", "canWalljump" ]
-                ]
-              },
-              {
-                "type": "itemgrid",
                 "orientation": "vertical",
                 //"v_alignment": "center",
                 "h_alignment": "center",
@@ -89,37 +98,37 @@
                   [ "maplayout" ]
                 ]
               }
-                //{
-                //  "type": "array",
-                //  "orientation": "vertical",
-                //  //"v_alignment": "center",
-                //  "h_alignment": "center",
-                //  "margin": "-10,8,0,0",
-                //  "content": [
-                //    {
-                //
-                //      "margin": "0,0,0,20",
-                //      "type": "item",
-                //      "item": "pirates", //objectives
-                //      "h_alignment": "center"
-                //    },
-                //    {
-                //      "type": "item",
-                //      "item": "difficulty",
-                //      "h_alignment": "right"
-                //    },
-                //    {
-                //      "type": "item",
-                //      "item": "itemprogression",
-                //      "h_alignment": "right"
-                //    },
-                //    {
-                //      "type": "item",
-                //      "item": "qualityoflife",
-                //      "h_alignment": "right"
-                //    }
-                //  ]
-                //}
+              //{
+              //  "type": "array",
+              //  "orientation": "vertical",
+              //  //"v_alignment": "center",
+              //  "h_alignment": "center",
+              //  "margin": "-10,8,0,0",
+              //  "content": [
+              //    {
+              //
+              //      "margin": "0,0,0,20",
+              //      "type": "item",
+              //      "item": "pirates", //objectives
+              //      "h_alignment": "center"
+              //    },
+              //    {
+              //      "type": "item",
+              //      "item": "difficulty",
+              //      "h_alignment": "right"
+              //    },
+              //    {
+              //      "type": "item",
+              //      "item": "itemprogression",
+              //      "h_alignment": "right"
+              //    },
+              //    {
+              //      "type": "item",
+              //      "item": "qualityoflife",
+              //      "h_alignment": "right"
+              //    }
+              //  ]
+              //}
             ]
           }
         ]

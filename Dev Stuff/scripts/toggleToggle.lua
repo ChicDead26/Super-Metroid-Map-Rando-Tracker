@@ -11,21 +11,29 @@ ToggleToggle = CustomItem:extend()
 function ToggleToggle:init(name, code, imagePath, imagePathDisabled, codeObjectToDisable, imagePathObjectToDisable, defaultState, itemType)
     self:createItem(name)
     self.code = code
+    self.objectToDisable = Tracker:FindObjectForCode(codeObjectToDisable)
+    --print("here1")
     self:setProperty("active", defaultState)
+    --print("here2")
     self.activeImage = ImageReference:FromPackRelativePath(imagePath)
+    --print("here3")
     self.disabledImage = ImageReference:FromPackRelativePath(imagePathDisabled)
     self.ItemInstance.PotentialIcon = self.activeImage
+
+    --self.imageNil = ImageReference:FromPackRelativePath(imageNilPath)
 
     --myCodeObjectToDisable = codeObjectToDisable
     --myImagePathObjectToDisable = imagePathObjectToDisable
 
     --self.codeObjectToDisable = codeObjectToDisable
-    self.objectToDisable = Tracker:FindObjectForCode(codeObjectToDisable)
+    --print(self.objectToDisable == nil)
+    --self.objectToDisable = Tracker:FindObjectForCode(codeObjectToDisable)
+    --print(self.objectToDisable == nil)
 
     self.otherDisabledImage = ImageReference:FromPackRelativePath(imagePathObjectToDisable)
 
     --self.itemType = itemType
-    print(self.objectToDisable == nil)
+    --print(self.objectToDisable == nil)
     print("do")
     --self.ItemInstance.Icon = self.disabledImage
     self.ItemInstance.Icon = self.activeImage

@@ -21,13 +21,16 @@ Tracker:AddItems("items/extras.json")
 
 if Tracker.ActiveVariantUID ~= "full" then
     toggleEye = ToggleToggle("ToggleEye", "toggleEye", "images/OffTracker/togglePlanetAwakenYes.png", "images/OffTracker/togglePlanetAwakenNo.png", "eye", "images/EyeE.png", true, 2)
-
+    print("post toggle eye")
     if Tracker.ActiveVariantUID ~= "boss" then
         togglePhantoon = ToggleToggle("TogglePhantoon", "togglePhantoon", "images/OffTracker/toggleOptionalPhantoonYes.png", "images/OffTracker/toggleOptionalPhantoonNo.png", "phantoon", "images/Boss3.png", true, 2)
     end
+    print("post toggle phantoon")
 
     toggleWalljumpBoots = ToggleProgressive("ToggleWalljumpBoots", "toggleWalljumpBoots", "images/OffTracker/toggleWalljumpBootsYes.png", "images/OffTracker/toggleWalljumpBootsNo.png", "walljumpBoots", "images/walljumpboots.png", false, 1)
+    print("post toggle boots")
     toggleCanWalljump = ToggleToggle("ToggleCanWalljump", "toggleCanWalljump", "images/OffTracker/toggleCanWalljumpYes.png", "images/OffTracker/toggleCanWalljumpNo.png", "canWalljump", "images/canWalljumpE.png", false, 2)
+    print("post toggle walljump")
 end
 
 Tracker:AddLayouts("layouts/tracker.json")

@@ -11,6 +11,7 @@ ToggleProgressive = CustomItem:extend()
 function ToggleProgressive:init(name, code, imagePath, imagePathDisabled, codeObjectToDisable, imagePathObjectToDisable, defaultState, itemType)
     self:createItem(name)
     self.code = code
+    self.objectToDisable = Tracker:FindObjectForCode(codeObjectToDisable)
     self:setProperty("active", defaultState)
     self.activeImage = ImageReference:FromPackRelativePath(imagePath)
     self.disabledImage = ImageReference:FromPackRelativePath(imagePathDisabled)
@@ -20,7 +21,6 @@ function ToggleProgressive:init(name, code, imagePath, imagePathDisabled, codeOb
     --myImagePathObjectToDisable = imagePathObjectToDisable
 
     --self.codeObjectToDisable = codeObjectToDisable
-    self.objectToDisable = Tracker:FindObjectForCode(codeObjectToDisable)
     self.otherDisabledImage = ImageReference:FromPackRelativePath(imagePathObjectToDisable, "@disabled")
 
     self.itemType = itemType

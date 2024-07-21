@@ -152,20 +152,12 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
             print(item.Name)
 
             if item.Name == "ToggleWalljumpBoots" then
-                --item.ItemInstance.Active = true
-                --item.Icon = ImageReference:FromPackRelativePath("images/OffTracker/toggleWalljumpBootsYes.png")
-                --print(toggleWalljumpBoots == nil)
-                toggleWalljumpBoots:setActive(true)
-                --print("hello, this thing on?")
-                --item.CurrentStage = 1
 
-                --item:setProperty("active", true)
-                --item.ItemInstance.Icon = nil--item.activeImage
+                toggleWalljumpBoots:setActive(true)
                 return
             end
 
             if item.Name == "CanWalljump" then
-                --print("bbbbaaaa")
                 toggleCanWalljump:setActive(true)
                 item.CurrentStage = 1
                 local canWalljumpItem = Tracker:FindObjectForCode(code)
@@ -174,25 +166,20 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
                 return
             end
 
-            --if  code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then
             if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or code == "eye" then
-                item.CurrentStage = 1--1 == false, off
+                item.CurrentStage = 1
             elseif code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then
-                --print(item.code)
                 item.Active = true
             else
                 --item.Active = false
             end
         else
             if item.Name == "ToggleWalljumpBoots" then
-                --item.ItemInstance.Active = false
                 toggleWalljumpBoots:setActive(false)
-                --item.CurrentStage = 2
                 return 
             end
 
             if item.Name == "CanWalljump" then
-                --print("abba")
                 toggleCanWalljump:setActive(false)
                 item.Active = 2
                 local canWalljumpItem = Tracker:FindObjectForCode(code)
@@ -202,7 +189,7 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
             end
 
             if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or code == "eye" then
-                item.CurrentStage = 0--1 == false, off
+                item.CurrentStage = 0
             elseif code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then
                 item.Active = false
             else
