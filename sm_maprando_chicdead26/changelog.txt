@@ -1,3 +1,5 @@
+v1.6.1.0
+  +Added new "High" Quality of Life option, new in v114
 v1.6.0.1
   =Fixed errors that popped in whenever you opened a tracker that wasn't the Full Tracker
   =Fixed weird positioning of the Extra Icons. This change is only noticeable in PopTracker

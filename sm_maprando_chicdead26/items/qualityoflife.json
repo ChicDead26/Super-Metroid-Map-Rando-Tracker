@@ -24,6 +24,12 @@
         "codes": "default"
       },
       {
+        "name": "High",
+        "img": "images/qol_high.png",
+        "inherit_codes": "false",
+        "codes": "default"
+      },
+      {
         "name": "Max",
         "img": "images/qol_max.png",
         "inherit_codes": "false",
