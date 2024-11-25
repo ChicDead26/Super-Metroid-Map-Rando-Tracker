@@ -18,6 +18,12 @@
         "codes": "tricky"
       },
       {
+        "name": "Technical",
+        "img": "images/prog_technical.png",
+        "inherit_codes": "false",
+        "codes": "technical"
+      },
+      {
         "name": "Challenge",
         "img": "images/prog_challenge.png",
         "inherit_codes": "false",
