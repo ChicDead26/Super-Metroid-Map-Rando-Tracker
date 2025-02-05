@@ -18,10 +18,10 @@
       //  "codes": "friendly"
       //},
       {
-        "name": "Tame",
-        "img": "images/mapl_tame.png",
+        "name": "Standard",
+        "img": "images/mapl_standard.png",
         "inherit_codes": "false",
-        "codes": "tame"
+        "codes": "standard"
       },
       {
         "name": "Wild",

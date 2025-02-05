@@ -1,3 +1,5 @@
+v1.6.3.0
+  =Changed Map Layout setting "Tame" to "Standard"
 v1.6.2.0
   +Added new "Technical" Item Progression option, new in v116
 v1.6.1.0
