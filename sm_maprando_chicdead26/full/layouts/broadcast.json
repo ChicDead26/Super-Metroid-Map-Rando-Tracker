@@ -145,7 +145,7 @@
                     "item_margin": "2,1",
                     "h_alignment": "left",
                     "rows": [
-                      [ "eye", "canWalljump" ]
+                      [ "eye" ]
                     ]
                   }
                 ]
