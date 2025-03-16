@@ -4,13 +4,13 @@
     "orientation": "vertical",
     "background": "#000000",
     "margin": "0,0",
-    "width": 350,
+    "width": 335,
     "height": 230,
     "content": [
       {
         "type": "array",
         "orientation": "vertical",
-        "margin": "0,0",
+        "margin": "1,0",
         "content": [
           {
             "type": "array",
@@ -26,7 +26,7 @@
                 "content": [
                   {
                     "type": "itemgrid",
-                    "item_margin": "2,1",
+                    "item_margin": "1,1",
                     "h_alignment": "left",
                     "margin": "0,5,0,0",
                     "rows": [
@@ -39,11 +39,11 @@
                   },
                   {
                     "type": "itemgrid",
-                    "margin": "18,5,0,0",
-                    "item_margin": "2,1",
+                    "margin": "0,2,0,0",
+                    "item_margin": "1,1",
                     "h_alignment": "left",
                     "rows": [
-                      [ "eye", "phantoon", "canWalljump" ]
+                      [ "eye", "phantoon" ]
                     ]
                   }
                 ]
@@ -53,33 +53,33 @@
                 //"orientation": "vertical",
                 //"v_alignment": "center",
                 "h_alignment": "center",
-                "margin": "0,-5,0,0",
+                "margin": "0,5,0,0",
                 "content": [
                   {
                     "type": "itemgrid",
-                    "margin": "4,8,4,0",
+                    //"margin": "4,8,4,0",
                     "item_margin": "0,1",
                     "h_alignment": "center",
                     "rows": [
                       //[ "missile", "supermissile", "powerbomb" ]
                       [ "missile" ],
                       [ "supermissile" ],
-                      [ "powerbomb" ]
-                      //[ "etank" ],
-                      //[ "reservetank" ]
-                    ]
-                  },
-                  {
-                    "type": "itemgrid",
-                    "margin": "0,1,0,0",
-                    "item_margin": "0,1",
-                    "h_alignment": "center",
-                    "rows": [
-                      //[ "etank", "reservetank" ]
+                      [ "powerbomb" ],
                       [ "etank" ],
                       [ "reservetank" ]
                     ]
-                  }
+                  }//,
+                  //{
+                  //  "type": "itemgrid",
+                  //  "margin": "0,1,0,0",
+                  //  "item_margin": "0,1",
+                  //  "h_alignment": "center",
+                  //  "rows": [
+                  //    //[ "etank", "reservetank" ]
+                  //    [ "etank" ],
+                  //    [ "reservetank" ]
+                  //  ]
+                  //}
                 ]
               },
               {

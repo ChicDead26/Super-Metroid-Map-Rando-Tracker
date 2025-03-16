@@ -18,8 +18,9 @@
               {
                 "type": "itemgrid",
                 "item_margin": "0,8",
-                "margin": "5,8,5,0",
+                "margin": "3,10,2,0",
                 "h_alignment": "center",
+                "v_alignment": "center",
                 "rows": [
                   [ "random1" ],
                   [ "random2" ],
@@ -38,7 +39,7 @@
             "content": [
               {
                 "type": "itemgrid",
-                "item_margin": "2,1",
+                "item_margin": "1,1",
                 "h_alignment": "left",
                 "margin": "0,5,0,0",
                 "rows": [
@@ -51,11 +52,11 @@
               },
               {
                 "type": "itemgrid",
-                "margin": "18,5,0,0",
-                "item_margin": "2,1",
+                "margin": "0,2,0,0", //"margin": "36,5,0,0",
+                "item_margin": "1,1",
                 "h_alignment": "left",
                 "rows": [
-                  [ "eye", "phantoon", "canWalljump" ]
+                  [ "eye", "phantoon" ]
                 ]
               }
             ]
@@ -65,33 +66,33 @@
             //"orientation": "vertical",
             //"v_alignment": "center",
             "h_alignment": "center",
-            "margin": "0,-5,0,0",
+            "margin": "0,5,0,0",
             "content": [
               {
                 "type": "itemgrid",
-                "margin": "4,8,4,0",
+                //"margin": "2,1,4,0",
                 "item_margin": "0,1",
                 "h_alignment": "center",
                 "rows": [
                   //[ "missile", "supermissile", "powerbomb" ]
                   [ "missile" ],
                   [ "supermissile" ],
-                  [ "powerbomb" ]
-                  //[ "etank" ],
-                  //[ "reservetank" ]
-                ]
-              },
-              {
-                "type": "itemgrid",
-                "margin": "0,1,0,0",
-                "item_margin": "0,1",
-                "h_alignment": "center",
-                "rows": [
-                  //[ "etank", "reservetank" ]
+                  [ "powerbomb" ],
                   [ "etank" ],
                   [ "reservetank" ]
                 ]
-              }
+              }//,
+              //{
+              //  "type": "itemgrid",
+              //  "margin": "0,1,0,0",
+              //  "item_margin": "0,1",
+              //  "h_alignment": "center",
+              //  "rows": [
+              //    //[ "etank", "reservetank" ]
+              //    [ "etank" ],
+              //    [ "reservetank" ]
+              //  ]
+              //}
             ]
           },
           {
@@ -146,7 +147,7 @@
             //"v_alignment": "right",
             "h_alignment": "left",
             "margin": "0,8,0,0",
-            "item_margin": "2,1",
+            "item_margin": "0,1",
             //"rows": [
             //  [ "toggleEye" ],
             //  [ "togglePhantoon" ],
@@ -165,12 +166,12 @@
                 "item": "togglePhantoon",
                 "h_alignment": "left"
               },
-              {
-                "margin": "-16,0,0,0",
-                "type": "item",
-                "item": "toggleCanWalljump",
-                "h_alignment": "left"
-              },
+              //{
+              //  "margin": "-16,0,0,0",
+              //  "type": "item",
+              //  "item": "toggleCanWalljump",
+              //  "h_alignment": "left"
+              //},
               {
                 "margin": "-8,0,0,0",
                 "type": "item",
@@ -192,7 +193,7 @@
   },
   "tracker_default": {
     "type": "container",
-    "width": 675,
+    "width": 640,//675
     "height": 230,
     "h_alignment": "left",
     "background": "#000000",

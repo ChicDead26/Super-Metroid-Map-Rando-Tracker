@@ -1,3 +1,7 @@
+v1.7.0.0
+  =Made the entire tracker more compact
+  =Moved the extra icons
+  -Removed the "Can Walljump" extra icon
 v1.6.3.0
   =Changed Map Layout setting "Tame" to "Standard"
 v1.6.2.0
