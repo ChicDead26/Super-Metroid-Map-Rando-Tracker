@@ -11,12 +11,12 @@
         "inherit_codes": "false",
         "codes": "maplayout, vanilla"
       },
-      //{
-      //  "name": "Friendly",
-      //  "img": "images/mapl_friendly.png",
-      //  "inherit_codes": "false",
-      //  "codes": "friendly"
-      //},
+      {
+        "name": "Small",
+        "img": "images/mapl_small.png",
+        "inherit_codes": "false",
+        "codes": "small"
+      },
       {
         "name": "Standard",
         "img": "images/mapl_standard.png",

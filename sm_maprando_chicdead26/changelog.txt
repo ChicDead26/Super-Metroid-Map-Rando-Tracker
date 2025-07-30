@@ -1,3 +1,5 @@
+v1.7.1.0
+  +Added Map Layout setting "Small", new in v119
 v1.7.0.0
   =Made the entire tracker more compact
   =Moved the extra icons
