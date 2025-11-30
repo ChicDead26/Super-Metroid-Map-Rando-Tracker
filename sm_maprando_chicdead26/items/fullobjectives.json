@@ -1,0 +1,372 @@
+[
+  //BOSSES
+  {
+    "name": "Ridley Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    //"initial_stage_idx": 0,
+    //"allow_disabled": "false",
+    //"loop": "true",
+    "stages": [
+      {
+        "img": "images/Boss1.png",
+        "codes": "ridleyfull,g4full"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Boss1Target.png",
+        //"img_mods": "@disabled",
+        //"disabled_img": "images/ObectivesFulltracker/Boss1Target.png",
+        //"disabled_img_mods": "@disabled",
+        "codes": "ridleyfull,g4full"
+      }
+    ]
+  },
+  {
+    "name": "Kraid Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Boss2.png",
+        "codes": "kraidfull,g4full"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Boss2Target.png",
+        "codes": "kraidfull,g4full"
+      }
+    ]
+  },
+  {
+    "name": "Phantoon Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Boss3.png",
+        "codes": "phantoonfull,g4full"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Boss3Target.png",
+        "codes": "phantoonfull,g4full"
+      }
+    ]
+  },
+  {
+    "name": "Draygon Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Boss4.png",
+        "codes": "draygonfull,g4full"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Boss4Target.png",
+        "codes": "draygonfulsfsl,g4full"
+      }
+    ]
+  },
+  //MINIBOSSES
+    {
+    "name": "Bomb Torizo Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Miniboss1E.png",
+        "disabled_img": "images/Miniboss1D.png",
+        "codes": "bombtorizofull"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Miniboss1ETarget.png",
+        "disabled_img": "images/ObectivesFulltracker/Miniboss1DTarget.png",
+        //"disabled_img_mods": "@disabled",
+        "codes": "bombtorizofull"
+      }
+    ]
+  },
+      {
+    "name": "Spore Spawn Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Miniboss2E.png",
+        "disabled_img": "images/Miniboss2D.png",
+        "codes": "sporespawnfull"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Miniboss2ETarget.png",
+        "disabled_img": "images/ObectivesFulltracker/Miniboss2DTarget.png",
+        "codes": "sporespawnfull"
+      }
+    ]
+  },
+        {
+    "name": "Crocomire Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Miniboss3E.png",
+        "disabled_img": "images/Miniboss3D.png",
+        "codes": "crocomirefull"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Miniboss3ETarget.png",
+        "disabled_img": "images/ObectivesFulltracker/Miniboss3DTarget.png",
+        "codes": "crocomirefull"
+      }
+    ]
+  },
+  {
+    "name": "Botwoon Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Miniboss4E.png",
+        "disabled_img": "images/Miniboss4D.png",
+        "codes": "botwoonfull"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Miniboss4ETarget.png",
+        "disabled_img": "images/ObectivesFulltracker/Miniboss4DTarget.png",
+        "codes": "botwoonfull"
+      }
+    ]
+  },
+  {
+    "name": "Golden Torizo Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Miniboss5E.png",
+        "disabled_img": "images/Miniboss5D.png",
+        "codes": "goldentorizofull"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Miniboss5ETarget.png",
+        "disabled_img": "images/ObectivesFulltracker/Miniboss5DTarget.png",
+        "codes": "goldentorizofull"
+      }
+    ]
+  },
+  //CHOZOS
+  {
+    "name": "Bowling Chozo Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/ChozoStatue1E.png",
+        "disabled_img": "images/ChozoStatue1D.png",
+        "codes": "bowlingchozofull, chozosfull"
+      },
+      {
+        "img": "images/ObectivesFulltracker/ChozoStatue1DTarget.png",
+        "disabled_img": "images/ObectivesFulltracker/ChozoStatue1DTarget.png",
+        "codes": "bowlingchozofull, chozosfull"
+      }
+    ]
+  },
+  {
+    "name": "Acid Chozo Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/ChozoStatue2E.png",
+        "disabled_img": "images/ChozoStatue2D.png",
+        "codes": "acidchozofull, chozosfull"
+      },
+      {
+        "img": "images/ObectivesFulltracker/ChozoStatue2ETarget.png",
+        "disabled_img": "images/ObectivesFulltracker/ChozoStatue2DTarget.png",
+        "codes": "acidchozofull, chozosfull"
+      }
+    ]
+  },
+  //METROIDS
+  {
+    "name": "MetroidRoom1 Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Metroids1E.png",
+        "disabled_img": "images/Metroids1D.png",
+        "codes": "metroids1full"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Metroids1ETarget.png",
+        "disabled_img": "images/ObectivesFulltracker/Metroids1DTarget.png",
+        "codes": "metroids1full"
+      }
+    ]
+  },
+  {
+    "name": "MetroidRoom2 Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Metroids2E.png",
+        "disabled_img": "images/Metroids2D.png",
+        "codes": "metroids2full"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Metroids2ETarget.png",
+        "disabled_img": "images/ObectivesFulltracker/Metroids2DTarget.png",
+        "codes": "metroids2full"
+      }
+    ]
+  },
+  {
+    "name": "MetroidRoom3 Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Metroids3E.png",
+        "disabled_img": "images/Metroids3D.png",
+        "codes": "metroids3full"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Metroids3ETarget.png",
+        "disabled_img": "images/ObectivesFulltracker/Metroids3DTarget.png",
+        "codes": "metroids3full"
+      }
+    ]
+  },
+  {
+    "name": "MetroidRoom4 Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Metroids4E.png",
+        "disabled_img": "images/Metroids4D.png",
+        "codes": "metroids4full"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Metroids4ETarget.png",
+        "disabled_img": "images/ObectivesFulltracker/Metroids4DTarget.png",
+        "codes": "metroids4full"
+      }
+    ]
+  },
+  //PIRATES
+  {
+    "name": "Pit Pirates Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Pirate1.png",
+        "codes": "pitpiratesfull"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Pirate1Target.png",
+        "codes": "pitpiratesfull"
+      }
+    ]
+  },
+  {
+    "name": "Baby Kraid Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Pirate2.png",
+        "codes": "babykraidpiratesfull"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Pirate2Target.png",
+        "codes": "babykraidpiratesfull"
+      }
+    ]
+  },
+  {
+    "name": "Plasma Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Pirate3.png",
+        "codes": "plasmapiratesfull"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Pirate3Target.png",
+        "codes": "plasmapiratesfull"
+      }
+    ]
+  },
+  {
+    "name": "Metal Pirates Full",
+    "type": "progressive_toggle",
+    "initial_active_state": true,
+    "stages": [
+      {
+        "img": "images/Pirate4.png",
+        "codes": "metalpiratesfull"
+      },
+      {
+        "img": "images/ObectivesFulltracker/Pirate4Target.png",
+        "codes": "metalpiratesfull"
+      }
+    ]
+  },
+// Boomerang Combo
+  {
+    "name": "Boomerangs",
+     "type": "composite_toggle",
+     "codes": "boomerangs",
+     "item_left": "blue_boomerang",
+     "item_right": "red_boomerang",
+     "images": [
+       {
+         "left": false,
+         "right": false,
+         "img": "images/boomerangs.png",
+         "img_mods": "@disabled"
+       },
+       {
+         "left": true,
+         "right": false,
+         "img": "images/boomerangsblue.png"
+       },
+       {
+         "left": false,
+         "right": true,
+         "img": "images/boomerangsdisabled.png"
+       },
+       {
+         "left": true,
+         "right": true,
+         "img": "images/boomerangs.png"
+       }
+     ]
+   }, 
+    // Bombs
+    {
+      "name": "Bombs",
+      "type": "progressive_toggle",
+      "initial_stage_idx": 0,
+      "stages": [
+        {
+          "img": "images/0003.png",
+          "codes": "bombs,bomb"
+        },
+        {
+          "img": "images/0003withbigbomb.png",
+          "disabled_img": "images/0003withbigbombdisabled.png",
+          "disabled_img_mods": "",
+          "codes": "bombs,bomb",
+          "secondary_codes": "bigbomb,superbomb"
+        }
+      ]
+    }
+ 
+]

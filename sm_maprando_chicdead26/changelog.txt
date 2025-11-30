@@ -1,3 +1,6 @@
+v1.8.0.0
+  +Added target markers for fulltracker objectives, so you can keep track of your random objectives there
+  +Added difficulty settings "Expert+", "Extreme+" and "Insane+", new in v120
 v1.7.1.0
   +Added Map Layout setting "Small", new in v119
 v1.7.0.0

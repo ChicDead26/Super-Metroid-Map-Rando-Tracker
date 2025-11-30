@@ -21,10 +21,10 @@
                 "margin": "3,10,1,0",
                 "h_alignment": "center",
                 "rows": [
-                  [ "ridley" ],
-                  [ "phantoon" ],
-                  [ "kraid" ],
-                  [ "draygon" ]
+                  [ "ridleyfull" ],
+                  [ "phantoonfull" ],
+                  [ "kraidfull" ],
+                  [ "draygonfull" ]
                 ]
               }
             ]
@@ -41,10 +41,10 @@
                 "margin": "1,10,1,0",
                 "h_alignment": "center",
                 "rows": [
-                  [ "sporespawn" ],
-                  [ "crocomire" ],
-                  [ "botwoon" ],
-                  [ "goldentorizo" ]
+                  [ "sporespawnfull" ],
+                  [ "crocomirefull" ],
+                  [ "botwoonfull" ],
+                  [ "goldentorizofull" ]
                 ]
               }
             ]
@@ -62,9 +62,9 @@
                 "margin": "1,10,1,0",
                 "h_alignment": "center",
                 "rows": [
-                  [ "bombtorizo" ],
-                  [ "bowlingchozo" ],
-                  [ "acidchozo" ]
+                  [ "bombtorizofull" ],
+                  [ "bowlingchozofull" ],
+                  [ "acidchozofull" ]
                   //[ "larva" ]
                   //[ "goldentorizo" ]
                 ]
@@ -83,10 +83,10 @@
                 "margin": "1,10,1,0",
                 "h_alignment": "center",
                 "rows": [
-                  [ "metroids1" ],
-                  [ "metroids2" ],
-                  [ "metroids3" ],
-                  [ "metroids4" ]
+                  [ "metroids1full" ],
+                  [ "metroids2full" ],
+                  [ "metroids3full" ],
+                  [ "metroids4full" ]
                 ]
               }
             ]
@@ -103,10 +103,10 @@
                 "margin": "1,10,2,0",
                 "h_alignment": "center",
                 "rows": [
-                  [ "pitpirates" ],
-                  [ "babykraidpirates" ],
-                  [ "plasmapirates" ],
-                  [ "metalpirates" ]
+                  [ "pitpiratesfull" ],
+                  [ "babykraidpiratesfull" ],
+                  [ "plasmapiratesfull" ],
+                  [ "metalpiratesfull" ]
                 ]
               }
             ]

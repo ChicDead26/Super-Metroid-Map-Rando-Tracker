@@ -5,6 +5,7 @@ ScriptHost:LoadScript("scripts/toggleToggle.lua")
 ScriptHost:LoadScript("scripts/toggleProgressive.lua")
 
 Tracker:AddItems("items/objectives.json")
+Tracker:AddItems("items/fullobjectives.json")
 Tracker:AddItems("items/difficulty.json")
 Tracker:AddItems("items/itemprogression.json")
 Tracker:AddItems("items/qualityoflife.json")

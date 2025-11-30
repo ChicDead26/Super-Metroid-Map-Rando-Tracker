@@ -36,14 +36,32 @@
         "codes": "expert"
       },
       {
+        "name": "Expert+",
+        "img": "images/diff_expert+.png",
+        "inherit_codes": "false",
+        "codes": "expert"
+      },
+      {
         "name": "Extreme",
         "img": "images/diff_extreme.png",
         "inherit_codes": "false",
         "codes": "extreme"
       },
       {
+        "name": "Extreme+",
+        "img": "images/diff_extreme+.png",
+        "inherit_codes": "false",
+        "codes": "extreme"
+      },
+      {
         "name": "Insane",
         "img": "images/diff_insane.png",
+        "inherit_codes": "false",
+        "codes": "insane"
+      },
+      {
+        "name": "Insane+",
+        "img": "images/diff_insane+.png",
         "inherit_codes": "false",
         "codes": "insane"
       }
