@@ -1,3 +1,7 @@
+v1.8.1.0
+  =Fulltracker crosshairs no longer become monochrome once the icon is disabled
+  =Autotracker, which was broken on fulltracker by the previous update, has been fixed
+  This update has been brought to you almost entirely by TarThoron, who figured out a way to overlay the crosshair icons. Thank you very much!
 v1.8.0.0
   +Added target markers for fulltracker objectives, so you can keep track of your random objectives there
   +Added difficulty settings "Expert+", "Extreme+" and "Insane+", new in v120

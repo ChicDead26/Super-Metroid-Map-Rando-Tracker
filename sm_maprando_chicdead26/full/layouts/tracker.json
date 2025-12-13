@@ -30,6 +30,25 @@
             ]
           },
           {
+            "type": "array",
+            "orientation": "vertical",
+            "margin": "0,0",
+            "content": [
+              {
+                "type": "itemgrid",
+                "item_margin": "0,8",
+                "margin": "-100,10,1,0",
+                "h_alignment": "center",
+                "rows": [
+                  [ "phantoonfull" ],
+                  [ "phantoonfull" ],
+                  [ "kraidfull" ],
+                  [ "draygonfull" ]
+                ]
+              }
+            ]
+          },
+          {
 
             "type": "array",
             "orientation": "vertical",

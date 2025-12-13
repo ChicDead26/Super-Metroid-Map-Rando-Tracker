@@ -5,12 +5,13 @@ ScriptHost:LoadScript("scripts/toggleToggle.lua")
 ScriptHost:LoadScript("scripts/toggleProgressive.lua")
 
 Tracker:AddItems("items/objectives.json")
-Tracker:AddItems("items/fullobjectives.json")
+
 Tracker:AddItems("items/difficulty.json")
 Tracker:AddItems("items/itemprogression.json")
 Tracker:AddItems("items/qualityoflife.json")
 Tracker:AddItems("items/maplayout.json")
 Tracker:AddItems("items/items.json")
+Tracker:AddItems("items/fullobjectives.json")
 Tracker:AddItems("items/bosses.json")
 Tracker:AddItems("items/minibosses.json")
 Tracker:AddItems("items/metroids.json")
@@ -30,8 +31,6 @@ if Tracker.ActiveVariantUID ~= "full" then
 
     toggleWalljumpBoots = ToggleProgressive("ToggleWalljumpBoots", "toggleWalljumpBoots", "images/OffTracker/toggleWalljumpBootsYes.png", "images/OffTracker/toggleWalljumpBootsNo.png", "walljumpBoots", "images/walljumpboots.png", false, 1)
     print("post toggle boots")
-    toggleCanWalljump = ToggleToggle("ToggleCanWalljump", "toggleCanWalljump", "images/OffTracker/toggleCanWalljumpYes.png", "images/OffTracker/toggleCanWalljumpNo.png", "canWalljump", "images/canWalljumpE.png", false, 2)
-    print("post toggle walljump")
 end
 
 Tracker:AddLayouts("layouts/tracker.json")

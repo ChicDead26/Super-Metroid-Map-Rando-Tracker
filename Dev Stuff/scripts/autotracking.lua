@@ -166,7 +166,8 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
                 return
             end
 
-            if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or code == "eye" then
+            if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or
+                code == "ridleyfull" or code == "draygonfull" or code == "phantoonfull" or code == "kraidfull" or code == "bombtorizofull" or code == "sporespawnfull" or code == "crocomirefull" or code == "botwoonfull" or code == "goldentorizofull" or code == "metroids1full" or code == "metroids2full" or code == "metroids3full" or code == "metroids4full" or code == "bowlingchozofull" or code == "acidchozofull" or code == "pitpiratesfull" or code == "babykraidpiratesfull" or code == "plasmapiratesfull" or code == "metalpiratesfull" then
                 item.CurrentStage = 1
             elseif code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then
                 item.Active = true

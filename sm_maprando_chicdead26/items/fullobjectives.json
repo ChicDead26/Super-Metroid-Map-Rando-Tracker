@@ -4,70 +4,73 @@
     "name": "Ridley Full",
     "type": "progressive_toggle",
     "initial_active_state": true,
-    //"initial_stage_idx": 0,
-    //"allow_disabled": "false",
-    //"loop": "true",
     "stages": [
       {
-        "img": "images/Boss1.png",
-        "codes": "ridleyfull,g4full"
+        "img": "images/Boss1.png"//,
+        //"codes": "ridleyfull"
       },
       {
-        "img": "images/ObectivesFulltracker/Boss1Target.png",
-        //"img_mods": "@disabled",
-        //"disabled_img": "images/ObectivesFulltracker/Boss1Target.png",
-        //"disabled_img_mods": "@disabled",
-        "codes": "ridleyfull,g4full"
+        "img": "images/Boss1.png",
+        "img_mods": "overlay|images/Crosshair32x.png",
+        "disabled_img": "images/Boss1.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair32x.png",
+        "codes": "ridleyfull"
       }
     ]
   },
   {
     "name": "Kraid Full",
     "type": "progressive_toggle",
-    "initial_active_state": true,
+    "initial_active_state":true,
     "stages": [
       {
-        "img": "images/Boss2.png",
-        "codes": "kraidfull,g4full"
+        "img": "images/Boss2.png"
       },
       {
-        "img": "images/ObectivesFulltracker/Boss2Target.png",
-        "codes": "kraidfull,g4full"
+        "img": "images/Boss2.png",
+        "img_mods": "overlay|images/Crosshair32x.png",
+        "disabled_img": "images/Boss2.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair32x.png",
+        "codes": "kraidfull"
       }
     ]
   },
   {
     "name": "Phantoon Full",
     "type": "progressive_toggle",
-    "initial_active_state": true,
+    "initial_active_state":true,
     "stages": [
       {
-        "img": "images/Boss3.png",
-        "codes": "phantoonfull,g4full"
+        "img": "images/Boss3.png"
       },
       {
-        "img": "images/ObectivesFulltracker/Boss3Target.png",
-        "codes": "phantoonfull,g4full"
+        "img": "images/Boss3.png",
+        "img_mods": "overlay|images/Crosshair32x.png",
+        "disabled_img": "images/Boss3.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair32x.png",
+        "codes": "phantoonfull"
       }
     ]
   },
   {
     "name": "Draygon Full",
     "type": "progressive_toggle",
-    "initial_active_state": true,
+    "initial_active_state":true,
     "stages": [
       {
-        "img": "images/Boss4.png",
-        "codes": "draygonfull,g4full"
+        "img": "images/Boss4.png"
       },
       {
-        "img": "images/ObectivesFulltracker/Boss4Target.png",
-        "codes": "draygonfulsfsl,g4full"
+        "img": "images/Boss4.png",
+        "img_mods": "overlay|images/Crosshair32x.png",
+        "disabled_img": "images/Boss4.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair32x.png",
+        "codes": "draygonfull"
       }
     ]
   },
   //MINIBOSSES
-    {
+  {
     "name": "Bomb Torizo Full",
     "type": "progressive_toggle",
     "initial_active_state": true,
@@ -78,14 +81,15 @@
         "codes": "bombtorizofull"
       },
       {
-        "img": "images/ObectivesFulltracker/Miniboss1ETarget.png",
-        "disabled_img": "images/ObectivesFulltracker/Miniboss1DTarget.png",
-        //"disabled_img_mods": "@disabled",
+        "img": "images/Miniboss1E.png",
+        "img_mods": "overlay|images/Crosshair64x.png",
+        "disabled_img": "images/Miniboss1D.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair64x.png",
         "codes": "bombtorizofull"
       }
     ]
   },
-      {
+  {
     "name": "Spore Spawn Full",
     "type": "progressive_toggle",
     "initial_active_state": true,
@@ -96,13 +100,15 @@
         "codes": "sporespawnfull"
       },
       {
-        "img": "images/ObectivesFulltracker/Miniboss2ETarget.png",
-        "disabled_img": "images/ObectivesFulltracker/Miniboss2DTarget.png",
+        "img": "images/Miniboss2E.png",
+        "img_mods": "overlay|images/Crosshair64x.png",
+        "disabled_img": "images/Miniboss2D.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair64x.png",
         "codes": "sporespawnfull"
       }
     ]
   },
-        {
+  {
     "name": "Crocomire Full",
     "type": "progressive_toggle",
     "initial_active_state": true,
@@ -113,8 +119,10 @@
         "codes": "crocomirefull"
       },
       {
-        "img": "images/ObectivesFulltracker/Miniboss3ETarget.png",
-        "disabled_img": "images/ObectivesFulltracker/Miniboss3DTarget.png",
+        "img": "images/Miniboss3E.png",
+        "img_mods": "overlay|images/Crosshair64x.png",
+        "disabled_img": "images/Miniboss3D.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair64x.png",
         "codes": "crocomirefull"
       }
     ]
@@ -130,8 +138,10 @@
         "codes": "botwoonfull"
       },
       {
-        "img": "images/ObectivesFulltracker/Miniboss4ETarget.png",
-        "disabled_img": "images/ObectivesFulltracker/Miniboss4DTarget.png",
+        "img": "images/Miniboss4E.png",
+        "img_mods": "overlay|images/Crosshair64x.png",
+        "disabled_img": "images/Miniboss4D.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair64x.png",
         "codes": "botwoonfull"
       }
     ]
@@ -147,9 +157,11 @@
         "codes": "goldentorizofull"
       },
       {
-        "img": "images/ObectivesFulltracker/Miniboss5ETarget.png",
-        "disabled_img": "images/ObectivesFulltracker/Miniboss5DTarget.png",
-        "codes": "goldentorizofull"
+        "img": "images/Miniboss5E.png",
+        "img_mods": "overlay|images/Crosshair64x.png",
+        "disabled_img": "images/Miniboss5D.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair64x.png",
+        "codes": "bgoldentorizofull"
       }
     ]
   },
@@ -162,12 +174,14 @@
       {
         "img": "images/ChozoStatue1E.png",
         "disabled_img": "images/ChozoStatue1D.png",
-        "codes": "bowlingchozofull, chozosfull"
+        "codes": "bowlingchozo,chozos"
       },
       {
-        "img": "images/ObectivesFulltracker/ChozoStatue1ETarget.png",
-        "disabled_img": "images/ObectivesFulltracker/ChozoStatue1DTarget.png",
-        "codes": "bowlingchozofull, chozosfull"
+        "img": "images/ChozoStatue1E.png",
+        "img_mods": "overlay|images/Crosshair64x.png",
+        "disabled_img": "images/ChozoStatue1D.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair64x.png",
+        "codes": "bowlingchozofull"
       }
     ]
   },
@@ -179,12 +193,14 @@
       {
         "img": "images/ChozoStatue2E.png",
         "disabled_img": "images/ChozoStatue2D.png",
-        "codes": "acidchozofull, chozosfull"
+        "codes": "acidchozo, chozos"
       },
       {
-        "img": "images/ObectivesFulltracker/ChozoStatue2ETarget.png",
-        "disabled_img": "images/ObectivesFulltracker/ChozoStatue2DTarget.png",
-        "codes": "acidchozofull, chozosfull"
+        "img": "images/ChozoStatue2E.png",
+        "img_mods": "overlay|images/Crosshair64x.png",
+        "disabled_img": "images/ChozoStatue2D.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair64x.png",
+        "codes": "acidchozofull"
       }
     ]
   },
@@ -200,8 +216,10 @@
         "codes": "metroids1full"
       },
       {
-        "img": "images/ObectivesFulltracker/Metroids1ETarget.png",
-        "disabled_img": "images/ObectivesFulltracker/Metroids1DTarget.png",
+        "img": "images/Metroids1E.png",
+        "img_mods": "overlay|images/Crosshair64x.png",
+        "disabled_img": "images/Metroids1D.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair64x.png",
         "codes": "metroids1full"
       }
     ]
@@ -217,8 +235,10 @@
         "codes": "metroids2full"
       },
       {
-        "img": "images/ObectivesFulltracker/Metroids2ETarget.png",
-        "disabled_img": "images/ObectivesFulltracker/Metroids2DTarget.png",
+        "img": "images/Metroids2E.png",
+        "img_mods": "overlay|images/Crosshair64x.png",
+        "disabled_img": "images/Metroids2D.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair64x.png",
         "codes": "metroids2full"
       }
     ]
@@ -234,8 +254,10 @@
         "codes": "metroids3full"
       },
       {
-        "img": "images/ObectivesFulltracker/Metroids3ETarget.png",
-        "disabled_img": "images/ObectivesFulltracker/Metroids3DTarget.png",
+        "img": "images/Metroids3E.png",
+        "img_mods": "overlay|images/Crosshair64x.png",
+        "disabled_img": "images/Metroids3D.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair64x.png",
         "codes": "metroids3full"
       }
     ]
@@ -251,8 +273,10 @@
         "codes": "metroids4full"
       },
       {
-        "img": "images/ObectivesFulltracker/Metroids4ETarget.png",
-        "disabled_img": "images/ObectivesFulltracker/Metroids4DTarget.png",
+        "img": "images/Metroids4E.png",
+        "img_mods": "overlay|images/Crosshair64x.png",
+        "disabled_img": "images/Metroids4D.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair64x.png",
         "codes": "metroids4full"
       }
     ]
@@ -264,109 +288,70 @@
     "initial_active_state": true,
     "stages": [
       {
-        "img": "images/Pirate1.png",
+        "img": "images/Pirate1x32.png",
         "codes": "pitpiratesfull"
       },
       {
-        "img": "images/ObectivesFulltracker/Pirate1Target.png",
+        "img": "images/Pirate1x32.png",
+        "img_mods": "overlay|images/Crosshair32x.png",
+        "disabled_img": "images/Pirate1x32.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair32x.png",
         "codes": "pitpiratesfull"
       }
     ]
-  },
+  },    
   {
-    "name": "Baby Kraid Full",
+    "name": "Baby Kraid Pirates Full",
     "type": "progressive_toggle",
     "initial_active_state": true,
     "stages": [
       {
-        "img": "images/Pirate2.png",
+        "img": "images/Pirate2x32.png",
         "codes": "babykraidpiratesfull"
       },
       {
-        "img": "images/ObectivesFulltracker/Pirate2Target.png",
+        "img": "images/Pirate2x32.png",
+        "img_mods": "overlay|images/Crosshair32x.png",
+        "disabled_img": "images/Pirate2x32.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair32x.png",
         "codes": "babykraidpiratesfull"
       }
     ]
-  },
+  },   
   {
-    "name": "Plasma Full",
+    "name": "Plasma Pirates Full",
     "type": "progressive_toggle",
     "initial_active_state": true,
     "stages": [
       {
-        "img": "images/Pirate3.png",
+        "img": "images/Pirate3x32.png",
         "codes": "plasmapiratesfull"
       },
       {
-        "img": "images/ObectivesFulltracker/Pirate3Target.png",
+        "img": "images/Pirate3x32.png",
+        "img_mods": "overlay|images/Crosshair32x.png",
+        "disabled_img": "images/Pirate3x32.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair32x.png",
         "codes": "plasmapiratesfull"
       }
     ]
-  },
+  },   
   {
     "name": "Metal Pirates Full",
     "type": "progressive_toggle",
     "initial_active_state": true,
     "stages": [
       {
-        "img": "images/Pirate4.png",
+        "img": "images/Pirate4x32.png",
         "codes": "metalpiratesfull"
       },
       {
-        "img": "images/ObectivesFulltracker/Pirate4Target.png",
+        "img": "images/Pirate4x32.png",
+        "img_mods": "overlay|images/Crosshair32x.png",
+        "disabled_img": "images/Pirate4x32.png",
+        "disabled_img_mods": "@disabled,overlay|images/Crosshair32x.png",
         "codes": "metalpiratesfull"
       }
     ]
-  },
-// Boomerang Combo
-  {
-    "name": "Boomerangs",
-     "type": "composite_toggle",
-     "codes": "boomerangs",
-     "item_left": "blue_boomerang",
-     "item_right": "red_boomerang",
-     "images": [
-       {
-         "left": false,
-         "right": false,
-         "img": "images/boomerangs.png",
-         "img_mods": "@disabled"
-       },
-       {
-         "left": true,
-         "right": false,
-         "img": "images/boomerangsblue.png"
-       },
-       {
-         "left": false,
-         "right": true,
-         "img": "images/boomerangsdisabled.png"
-       },
-       {
-         "left": true,
-         "right": true,
-         "img": "images/boomerangs.png"
-       }
-     ]
-   }, 
-    // Bombs
-    {
-      "name": "Bombs",
-      "type": "progressive_toggle",
-      "initial_stage_idx": 0,
-      "stages": [
-        {
-          "img": "images/0003.png",
-          "codes": "bombs,bomb"
-        },
-        {
-          "img": "images/0003withbigbomb.png",
-          "disabled_img": "images/0003withbigbombdisabled.png",
-          "disabled_img_mods": "",
-          "codes": "bombs,bomb",
-          "secondary_codes": "bigbomb,superbomb"
-        }
-      ]
-    }
- 
+  }
 ]
