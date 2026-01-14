@@ -1,3 +1,5 @@
+v1.8.1.1
+  =Autotracker, which was once again broken by the previous update, has been fixed. Also deleted some old unnecessary code and fixed a bug that was there since the beginning
 v1.8.1.0
   =Fulltracker crosshairs no longer become monochrome once the icon is disabled
   =Autotracker, which was broken on fulltracker by the previous update, has been fixed

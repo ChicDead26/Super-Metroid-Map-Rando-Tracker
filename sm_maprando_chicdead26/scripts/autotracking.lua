@@ -157,19 +157,11 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
                 return
             end
 
-            if item.Name == "CanWalljump" then
-                toggleCanWalljump:setActive(true)
+            if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or code == "eye" then
                 item.CurrentStage = 1
-                local canWalljumpItem = Tracker:FindObjectForCode(code)
-                canWalljumpItem.Active = true
-
-                return
-            end
-
-            if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or
-                code == "ridleyfull" or code == "draygonfull" or code == "phantoonfull" or code == "kraidfull" or code == "bombtorizofull" or code == "sporespawnfull" or code == "crocomirefull" or code == "botwoonfull" or code == "goldentorizofull" or code == "metroids1full" or code == "metroids2full" or code == "metroids3full" or code == "metroids4full" or code == "bowlingchozofull" or code == "acidchozofull" or code == "pitpiratesfull" or code == "babykraidpiratesfull" or code == "plasmapiratesfull" or code == "metalpiratesfull" then
-                item.CurrentStage = 1
-            elseif code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then
+            elseif code == "ridleyfull" or code == "draygonfull" or code == "phantoonfull" or code == "kraidfull" or code == "bombtorizofull" or code == "sporespawnfull" or code == "crocomirefull" or code == "botwoonfull" or code == "goldentorizofull" or code == "metroids1full" or code == "metroids2full" or code == "metroids3full" or code == "metroids4full" or code == "bowlingchozofull" or code == "acidchozofull" or code == "pitpiratesfull" or code == "babykraidpiratesfull" or code == "plasmapiratesfull" or code == "metalpiratesfull" then
+                item.Active = false
+            elseif code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then --or code == "kraidfull" then
                 item.Active = true
             else
                 --item.Active = false
@@ -180,18 +172,11 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
                 return 
             end
 
-            if item.Name == "CanWalljump" then
-                toggleCanWalljump:setActive(false)
-                item.Active = 2
-                local canWalljumpItem = Tracker:FindObjectForCode(code)
-                canWalljumpItem.Active = false
-
-                return
-            end
-
             if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or code == "eye" then
                 item.CurrentStage = 0
-            elseif code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then
+            elseif code == "ridleyfull" or code == "draygonfull" or code == "phantoonfull" or code == "kraidfull" or code == "bombtorizofull" or code == "sporespawnfull" or code == "crocomirefull" or code == "botwoonfull" or code == "goldentorizofull" or code == "metroids1full" or code == "metroids2full" or code == "metroids3full" or code == "metroids4full" or code == "bowlingchozofull" or code == "acidchozofull" or code == "pitpiratesfull" or code == "babykraidpiratesfull" or code == "plasmapiratesfull" or code == "metalpiratesfull" then
+                item.Active = true
+            elseif code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then -- or code == "kraidfull" then
                 item.Active = false
             else
                 --item.Active = true
@@ -249,7 +234,6 @@ function updateToggles(segment)
         local address = 0xDFFF05
 
         updateToggleItemFromByteAndFlag(segment, "toggleWalljumpBoots", address, 0x01)
-        updateToggleItemFromByteAndFlag(segment, "canWalljump", address, 0x02)
 
     end
     return true
@@ -280,6 +264,27 @@ function updateBosses(segment)
     end
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
         InvalidateReadCaches()
+
+        -- Fulltracker
+        updateToggleItemFromByteAndFlag(segment, "kraidfull", 0x7ed829, 0x01)
+        updateToggleItemFromByteAndFlag(segment, "phantoonfull", 0x7ed82b, 0x01)
+        updateToggleItemFromByteAndFlag(segment, "draygonfull", 0x7ed82c, 0x01)
+        updateToggleItemFromByteAndFlag(segment, "ridleyfull", 0x7ed82a, 0x01)
+        updateToggleItemFromByteAndFlag(segment, "sporespawnfull", 0x7ed829, 0x02)
+        updateToggleItemFromByteAndFlag(segment, "crocomirefull", 0x7ed82a, 0x02)
+        updateToggleItemFromByteAndFlag(segment, "botwoonfull", 0x7ed82c, 0x02)
+        updateToggleItemFromByteAndFlag(segment, "goldentorizofull", 0x7ed82a, 0x04)
+        updateToggleItemFromByteAndFlag(segment, "metroids1full", 0x7ed822, 0x01)
+        updateToggleItemFromByteAndFlag(segment, "metroids2full", 0x7ed822, 0x02)
+        updateToggleItemFromByteAndFlag(segment, "metroids3full", 0x7ed822, 0x04)
+        updateToggleItemFromByteAndFlag(segment, "metroids4full", 0x7ed822, 0x08)
+        updateToggleItemFromByteAndFlag(segment, "bombtorizofull", 0x7ed828, 0x04)
+        updateToggleItemFromByteAndFlag(segment, "bowlingchozofull", 0x7ed823, 0x01)
+        updateToggleItemFromByteAndFlag(segment, "acidchozofull", 0x7ed821, 0x10)
+        updateToggleItemFromByteAndFlag(segment, "pitpiratesfull", 0x7ed823, 0x02)
+        updateToggleItemFromByteAndFlag(segment, "babykraidpiratesfull", 0x7ed823, 0x04)
+        updateToggleItemFromByteAndFlag(segment, "plasmapiratesfull", 0x7ed823, 0x08)
+        updateToggleItemFromByteAndFlag(segment, "metalpiratesfull", 0x7ed823, 0x10)
 
         -- Bosses
         updateToggleItemFromByteAndFlag(segment, "kraid", 0x7ed829, 0x01)
