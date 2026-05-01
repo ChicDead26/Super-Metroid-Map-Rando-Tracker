@@ -6,10 +6,10 @@
     "loop": "true",
     "stages": [
       {
-        "img": "images/Pirate1.png"
+        "img": "images/Pirate1x32.png"
       },
       {
-        "img": "images/Pirate1.png",
+        "img": "images/Pirate1x32.png",
         "img_mods": "@disabled",
         "codes": "pitpirates"
       }
@@ -22,10 +22,10 @@
     "loop": "true",
     "stages": [
       {
-        "img": "images/Pirate2.png"
+        "img": "images/Pirate2x32.png"
       },
       {
-        "img": "images/Pirate2.png",
+        "img": "images/Pirate2x32.png",
         "img_mods": "@disabled",
         "codes": "babykraidpirates"
       }
@@ -38,10 +38,10 @@
     "loop": "true",
     "stages": [
       {
-        "img": "images/Pirate3.png"
+        "img": "images/Pirate3x32.png"
       },
       {
-        "img": "images/Pirate3.png",
+        "img": "images/Pirate3x32.png",
         "img_mods": "@disabled",
         "codes": "plasmapirates"
       }
@@ -54,10 +54,10 @@
     "loop": "true",
     "stages": [
       {
-        "img": "images/Pirate4.png"
+        "img": "images/Pirate4x32.png"
       },
       {
-        "img": "images/Pirate4.png",
+        "img": "images/Pirate4x32.png",
         "img_mods": "@disabled",
         "codes": "metalpirates"
       }

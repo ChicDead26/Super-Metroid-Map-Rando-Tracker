@@ -15,22 +15,23 @@
       }
     ]
   },
-  {
-    "name": "CanWalljump",
-    "type": "progressive",
-    "allow_disabled": "false",
-    "loop": "true",
-    "stages": [
-      {
-        "img": "images/canWalljumpE.png",
-        "codes": "canWalljump, extras"
-      },
-      {
-        "img": "images/canWalljumpD.png"
-        //"img_mods": "@disabled",
-      }
-    ]
-  },
+//  {
+//    "name": "CanWalljump",
+//    "type": "progressive",
+//    "allow_disabled": "false",
+//    "loop": "true",
+//    "stages": [
+//      {
+//        "img": "images/canWalljumpE.png",
+//        "codes": "canWalljump, extras"
+//      },
+//      {
+//        "img": "images/canWalljumpD.png"
+//        //"img_mods": "@disabled",
+//      }
+//    ]
+//  },
+
   {
     "name": "Tooltip",
     "type": "progressive",

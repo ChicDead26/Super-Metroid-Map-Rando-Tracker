@@ -127,7 +127,7 @@ function updateAmmoFrom2Bytes(segment, code, address)
 end
 
 function updateToggleItemFromByteAndFlag(segment, code, address, flag)
-	print("starting item function")
+	--print("starting item function")
     local item = Tracker:FindObjectForCode(code)
 
     if item then
@@ -137,23 +137,31 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
 
         if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
             print("Item:", item.Name, string.format("0x%x", address), string.format("0x%x", value),
-                    string.format("0x%x", flag), flagTest ~= 0)
+            string.format("0x%x", flag), flagTest ~= 0)
         end
-			if flagTest ~= 0 then
-			    hasChargeBeam = true
-			end
-		        if code == "chargebeam" then
-      --Reset the variable so we can have the correct status upon a death.
-      hasChargeBeam = false
-      if flagTest ~= 0 then
-          hasChargeBeam = true
-      end
+
+		if flagTest ~= 0 then
+		    hasChargeBeam = true
+		end
+
+		if code == "chargebeam" then
+            --Reset the variable so we can have the correct status upon a death.
+            hasChargeBeam = false
+            if flagTest ~= 0 then
+                hasChargeBeam = true
+        end
+
         elseif flagTest ~= 0 then
             print(item.Name)
 
             if item.Name == "ToggleWalljumpBoots" then
-
-                toggleWalljumpBoots:setActive(true)
+                toggleWalljumpBoots:setActive(false)
+                return
+            elseif item.Name == "ToggleSpeedBoosterSplit" then
+                toggleSpeedBoosterSplit:setActive(false)
+                return
+            elseif item.Name == "SwitchSpeed" then
+                switchSpeed:setActive(true)
                 return
             end
 
@@ -168,8 +176,14 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
             end
         else
             if item.Name == "ToggleWalljumpBoots" then
-                toggleWalljumpBoots:setActive(false)
-                return 
+                toggleWalljumpBoots:setActive(true)
+                return
+            elseif item.Name == "ToggleSpeedBoosterSplit" then
+                toggleSpeedBoosterSplit:setActive(true)
+                return
+            elseif item.Name == "SwitchSpeed" then
+                switchSpeed:setActive(false)
+                return
             end
 
             if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or code == "eye" then
@@ -210,7 +224,14 @@ function updateItems(segment)
         updateToggleItemFromByteAndFlag(segment, "space", address + 0x03, 0x02)
         updateToggleItemFromByteAndFlag(segment, "walljumpBoots", address + 0x03, 0x04)
         updateToggleItemFromByteAndFlag(segment, "bomb", address + 0x03, 0x10)
-        updateToggleItemFromByteAndFlag(segment, "speed", address + 0x03, 0x20)
+
+        if defaultIcon then
+            updateToggleItemFromByteAndFlag(segment, "switchSpeed", address + 0x03, 0x20)
+        else
+            updateToggleItemFromByteAndFlag(segment, "switchSpeed", address + 0x02, 0x40)
+        end
+
+        updateToggleItemFromByteAndFlag(segment, "spark", address + 0x02, 0x80)
         updateToggleItemFromByteAndFlag(segment, "grapple", address + 0x03, 0x40)
         updateToggleItemFromByteAndFlag(segment, "xray", address + 0x03, 0x80)
 
@@ -232,8 +253,10 @@ function updateToggles(segment)
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
         InvalidateReadCaches()
         local address = 0xDFFF05
+        --print("FUCK")
 
         updateToggleItemFromByteAndFlag(segment, "toggleWalljumpBoots", address, 0x01)
+        updateToggleItemFromByteAndFlag(segment, "toggleSpeedBoosterSplit", address, 0x40)
 
     end
     return true

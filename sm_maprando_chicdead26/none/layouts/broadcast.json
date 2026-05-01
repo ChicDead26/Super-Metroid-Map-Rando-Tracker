@@ -32,9 +32,9 @@
                     "rows": [
                       [ "charge", "varia", "morph", "hijump" ],
                       [ "ice", "gravity", "bomb", "space" ],
-                      [ "wave", "", "spring", "speed" ],
-                      [ "spazer", "grapple", "screw", "walljumpBoots" ],
-                      [ "plasma", "xray", "", "" ]
+                      [ "wave", "", "spring", "screw" ],
+                      [ "spazer", "grapple", "switchSpeed", "walljumpBoots" ],
+                      [ "plasma", "xray", "spark", "" ]
                     ]
                   },
                   {

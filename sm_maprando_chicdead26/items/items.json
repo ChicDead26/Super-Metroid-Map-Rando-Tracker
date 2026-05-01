@@ -90,6 +90,20 @@
     "img": "images/speed.png",
     "codes": "speed"
   },
+    {
+    "name": "Blue Booster",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/blue.png",
+    "codes": "blue"
+  },
+    {
+    "name": "Spark Booster",
+    "type": "toggle",
+    "loop": "true",
+    "img": "images/spark.png",
+    "codes": "spark"
+  },
   {
     "name": "Grapple",
     "type": "toggle",

@@ -1,3 +1,7 @@
+v1.9.0.0
+  +Added the option to split the Speed Booster icon into the Blue Booster and the Spark Booster, new in v121
+  =Switched the position of the Screw Attack and the Speed Booster icons
+  =Fixed the autotracker not properly tracking if you had Walljump Boots present
 v1.8.1.1
   =Autotracker, which was once again broken by the previous update, has been fixed. Also deleted some old unnecessary code and fixed a bug that was there since the beginning
 v1.8.1.0

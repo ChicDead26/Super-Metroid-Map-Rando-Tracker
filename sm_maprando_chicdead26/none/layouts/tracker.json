@@ -24,9 +24,9 @@
                 "rows": [
                   [ "charge", "varia", "morph", "hijump" ],
                   [ "ice", "gravity", "bomb", "space" ],
-                  [ "wave", "", "spring", "speed" ],
-                  [ "spazer", "grapple", "screw", "walljumpBoots" ],
-                  [ "plasma", "xray", "", "" ]
+                  [ "wave", "", "spring", "screw" ],
+                  [ "spazer", "grapple", "switchSpeed", "walljumpBoots" ],
+                  [ "plasma", "xray", "spark", "" ]
                 ]
               },
               {
@@ -156,6 +156,12 @@
                 "margin": "-8,0,0,0",
                 "type": "item",
                 "item": "toggleWalljumpBoots",
+                "h_alignment": "left"
+              },
+              {
+                "margin": "-16,0,0,0",
+                "type": "item",
+                "item": "toggleSpeedBoosterSplit",
                 "h_alignment": "left"
               },
               {

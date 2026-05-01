@@ -145,9 +145,9 @@
                 "rows": [
                   [ "charge", "varia", "morph", "hijump" ],
                   [ "ice", "gravity", "bomb", "space" ],
-                  [ "wave", "", "spring", "speed" ],
-                  [ "spazer", "grapple", "screw", "walljumpBoots" ],
-                  [ "plasma", "xray", "", "" ]
+                  [ "wave", "", "spring", "screw" ],
+                  [ "spazer", "grapple", "switchSpeed", "walljumpBoots" ],
+                  [ "plasma", "xray", "spark", "" ]
                 ]
               },
               {
@@ -210,6 +210,29 @@
               [ "qualityoflife" ],
               [ "maplayout" ]
             ]
+          },
+          {
+            "type": "array",
+            "orientation": "vertical",
+            //"v_alignment": "right",
+            "h_alignment": "left",
+            "margin": "0,8,0,0",
+            "item_margin": "0,1",
+            "content": [
+              {
+                "margin": "-16,0,0,0",
+                "type": "item",
+                "item": "toggleSpeedBoosterSplit",
+                "h_alignment": "left"
+              },
+              {
+                "margin": "-24,100,0,0",
+                "type": "item",
+                "item": "tooltip",
+                "h_alignment": "left",
+                "v_alignment": "up"
+              }
+            ]
           }
         ]
       }
@@ -217,7 +240,7 @@
   },
   "tracker_default": {
     "type": "container",
-    "width": 520,
+    "width": 750,
     "height": 230,
     "h_alignment": "left",
     "background": "#000000",
