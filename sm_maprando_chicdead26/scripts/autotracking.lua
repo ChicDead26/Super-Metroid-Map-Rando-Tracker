@@ -155,10 +155,10 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
             print(item.Name)
 
             if item.Name == "ToggleWalljumpBoots" then
-                toggleWalljumpBoots:setActive(false)
+                toggleWalljumpBoots:setActive(true)
                 return
             elseif item.Name == "ToggleSpeedBoosterSplit" then
-                toggleSpeedBoosterSplit:setActive(false)
+                toggleSpeedBoosterSplit:setActive(true)
                 return
             elseif item.Name == "SwitchSpeed" then
                 switchSpeed:setActive(true)
@@ -176,10 +176,10 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
             end
         else
             if item.Name == "ToggleWalljumpBoots" then
-                toggleWalljumpBoots:setActive(true)
+                toggleWalljumpBoots:setActive(false)
                 return
             elseif item.Name == "ToggleSpeedBoosterSplit" then
-                toggleSpeedBoosterSplit:setActive(true)
+                toggleSpeedBoosterSplit:setActive(false)
                 return
             elseif item.Name == "SwitchSpeed" then
                 switchSpeed:setActive(false)
@@ -256,7 +256,7 @@ function updateToggles(segment)
         --print("FUCK")
 
         updateToggleItemFromByteAndFlag(segment, "toggleWalljumpBoots", address, 0x01)
-        updateToggleItemFromByteAndFlag(segment, "toggleSpeedBoosterSplit", address, 0x40)
+        updateToggleItemFromByteAndFlag(segment, "toggleSpeedBoosterSplit", address, 0x02)
 
     end
     return true

@@ -56,10 +56,14 @@ function ToggleSwitch:updateIcon()
             self.ItemInstance.Icon = self.imageBDisabled
         end
     end
+
+    print(self:getActive())
+    print("this")
 end
 
 function ToggleSwitch:onLeftClick()
     self:setActive(not self:getActive())
+    print(self:getActive())
 end
 
 function ToggleSwitch:onRightClick()
@@ -90,13 +94,15 @@ end
 function ToggleSwitch:save()
     print(self:getActive())
 
-    local saveData = {}
-    saveData["active"] = self.getActive()
-    return saveData
+    local data = {}
+    data["active"] = self:getActive()
+    
+    return data
 end
 
-function ToggleSwitch:Load(data)
+function ToggleSwitch:load(data)
     if data["active"] ~= nil then
+        
         self:setActive(data["active"])
     end
     print(self:getActive())

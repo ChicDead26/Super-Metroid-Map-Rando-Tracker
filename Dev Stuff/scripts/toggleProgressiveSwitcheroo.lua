@@ -127,17 +127,25 @@ end
 function ToggleProgressiveSwitcheroo:save()
     print(self:getActive())
 
-    local saveData = {}
-    saveData["active"] = self.getActive()
-    return saveData
+    local data = {}
+    data["active"] = self:getActive()
+    data["defaultIcon"] = defaultIcon
+    data["activeSwitch"] = speedSwitch:getActive()
+    data["objectToDisable"] = self.objectToDisable.Active
+    return data
 end
 
-function ToggleProgressiveSwitcheroo:Load(data)
+function ToggleProgressiveSwitcheroo:load(data)
     if data["active"] ~= nil then
         self:setActive(data["active"])
+        self:updateIcon()
+        self.objectToDisable.Active = data["objectToDisable"]
+        defaultIcon = data["defaultIcon"]
+        speedSwitch:setActive(data["activeSwitch"])
+        print(defaultIcon)
+        print("dafa")
+        speedSwitch:updateIcon()
     end
-    print(self:getActive())
-    self:updateIcon()
     return true
 end
 

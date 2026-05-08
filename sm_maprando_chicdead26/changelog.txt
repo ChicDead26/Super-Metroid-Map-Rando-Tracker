@@ -1,3 +1,6 @@
+v1.9.1.0
+  =Fixed the tracker not saving and loading Lua items properly
+  =Fixed Walljump Boots and Blue/Spark Boosters being detected when they're not present and vice versa, which was done on purpose due to a bug on my side. Thanks to Ayt and nn44 for the help dealing with this!
 v1.9.0.0
   +Added the option to split the Speed Booster icon into the Blue Booster and the Spark Booster, new in v121
   =Switched the position of the Screw Attack and the Speed Booster icons

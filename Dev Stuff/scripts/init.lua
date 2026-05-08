@@ -41,6 +41,9 @@ end
 switchSpeed = ToggleSwitch("SwitchSpeed", "switchSpeed", "images/speed.png", "images/blue.png", false, 1)
 toggleSpeedBoosterSplit = ToggleProgressiveSwitcheroo("ToggleSpeedBoosterSplit", "toggleSpeedBoosterSplit", "images/OffTracker/toggleSpeedBoosterSplitYes.png", "images/OffTracker/toggleSpeedBoosterSplitNo.png", "speed", "spark", "images/blue.png", "images/speed.png", "images/spark.png", false, 1)
 
+--Tracker:AddItems("items/items.json")
+
+
 Tracker:AddLayouts("layouts/tracker.json")
 Tracker:AddLayouts("layouts/broadcast.json")
 
