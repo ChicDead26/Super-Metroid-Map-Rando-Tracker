@@ -91,7 +91,7 @@
                 "item_margin": "0,-65",
                 "margin": "-5,35,0,0",
                 "rows": [
-                  [ "none" ],
+                  [ "objectives" ],
                   [ "difficulty" ],
                   [ "itemprogression" ],
                   [ "qualityoflife" ],

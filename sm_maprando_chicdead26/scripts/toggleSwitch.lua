@@ -15,8 +15,8 @@ function ToggleSwitch:init(name, code, imagePathA, imagePathB, defaultState, ite
     self.activeImage = ImageReference:FromPackRelativePath(imagePathA)
     --self.disabledImage = ImageReference:FromPackRelativePath(imagePathADisabled)
     self.ItemInstance.PotentialIcon = self.activeImage
-    defaultIcon = true
-    speedSwitch = self--Don't think about it, don't worry about it
+    self.defaultIcon = true
+    --speedSwitch = self--Don't think about it, don't worry about it
     --myCodeObjectToDisable = codeObjectToDisable
     --myImagePathObjectToDisable = imagePathObjectToDisable
     --print("fuck")
@@ -44,13 +44,13 @@ end
 
 function ToggleSwitch:updateIcon()
     if self:getActive() then
-        if defaultIcon then
+        if self.defaultIcon then
             self.ItemInstance.Icon = self.imageA
         else
             self.ItemInstance.Icon = self.imageB
         end
     else
-        if defaultIcon then
+        if self.defaultIcon then
             self.ItemInstance.Icon = self.imageADisabled
         else
             self.ItemInstance.Icon = self.imageBDisabled

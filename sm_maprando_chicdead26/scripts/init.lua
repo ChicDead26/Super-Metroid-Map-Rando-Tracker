@@ -18,31 +18,53 @@ Tracker:AddItems("items/metroids.json")
 Tracker:AddItems("items/chozos.json")
 Tracker:AddItems("items/pirates.json")
 Tracker:AddItems("items/random.json")
+
+local function applyObjectiveDefaults()
+  local variant = Tracker.ActiveVariantUID
+  local obj = Tracker:FindObjectForCode("objectives")
+
+  if not obj then return end
+
+  local map = {
+    bosses = 1,
+    minibosses = 2,
+    chozos = 3,
+    pirates = 4,
+    metroids = 5,
+    random = 6,
+    none = 0
+  }
+
+  if map[variant] ~= nil and obj.CurrentStage == 0 then
+    obj.CurrentStage = map[variant]
+  end
+end
+
+applyObjectiveDefaults()
+
+
 Tracker:AddItems("items/larvas.json")
 Tracker:AddItems("items/extras.json")
 
-ScriptHost:LoadScript("scripts/toggleProgressiveSwitcheroo.lua")
 ScriptHost:LoadScript("scripts/toggleSwitch.lua")
+ScriptHost:LoadScript("scripts/toggleProgressiveSwitcheroo.lua")
 
 if Tracker.ActiveVariantUID ~= "full" then
-    toggleEye = ToggleToggle("ToggleEye", "toggleEye", "images/OffTracker/togglePlanetAwakenYes.png", "images/OffTracker/togglePlanetAwakenNo.png", "eye", "images/EyeE.png", true, 2)
-    print("post toggle eye")
+  toggleEye = ToggleToggle("ToggleEye", "toggleEye", "images/OffTracker/togglePlanetAwakenYes.png", "images/OffTracker/togglePlanetAwakenNo.png", "eye", "images/EyeE.png", true, 2)
+  print("post toggle eye")
 
-    if Tracker.ActiveVariantUID ~= "boss" then
-        togglePhantoon = ToggleToggle("TogglePhantoon", "togglePhantoon", "images/OffTracker/toggleOptionalPhantoonYes.png", "images/OffTracker/toggleOptionalPhantoonNo.png", "phantoon", "images/Boss3.png", true, 2)
-    end
-    print("post toggle phantoon")
+  if Tracker.ActiveVariantUID ~= "boss" then
+    togglePhantoon = ToggleToggle("TogglePhantoon", "togglePhantoon", "images/OffTracker/toggleOptionalPhantoonYes.png", "images/OffTracker/toggleOptionalPhantoonNo.png", "phantoon", "images/Boss3.png", true, 2)
+  end
+  print("post toggle phantoon")
 
-    toggleWalljumpBoots = ToggleProgressive("ToggleWalljumpBoots", "toggleWalljumpBoots", "images/OffTracker/toggleWalljumpBootsYes.png", "images/OffTracker/toggleWalljumpBootsNo.png", "walljumpBoots", "images/walljumpboots.png", false, 1)
-    print("post toggle boots")
-
+  toggleWalljumpBoots = ToggleProgressive("ToggleWalljumpBoots", "toggleWalljumpBoots", "images/OffTracker/toggleWalljumpBootsYes.png", "images/OffTracker/toggleWalljumpBootsNo.png", "walljumpBoots", "images/walljumpboots.png", false, 1)
+  print("post toggle boots")
 end
+
 
 switchSpeed = ToggleSwitch("SwitchSpeed", "switchSpeed", "images/speed.png", "images/blue.png", false, 1)
 toggleSpeedBoosterSplit = ToggleProgressiveSwitcheroo("ToggleSpeedBoosterSplit", "toggleSpeedBoosterSplit", "images/OffTracker/toggleSpeedBoosterSplitYes.png", "images/OffTracker/toggleSpeedBoosterSplitNo.png", "speed", "spark", "images/blue.png", "images/speed.png", "images/spark.png", false, 1)
-
---Tracker:AddItems("items/items.json")
-
 
 Tracker:AddLayouts("layouts/tracker.json")
 Tracker:AddLayouts("layouts/broadcast.json")

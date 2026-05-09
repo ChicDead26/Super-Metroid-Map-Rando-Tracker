@@ -1,3 +1,10 @@
+v1.9.2.0
+  +Objectives, Difficulty, Item Progression, Quality of Life and Map Layout can be autotracked now, starting in v122. You can change them if you don't like what it autotracks to!
+  +Added new Custom setting for Objectives, Difficulty, Item Progression and Quality of Life
+  =In the autotracking script, some of the routines that were either overly complex or had duplicates of multiple items (or just always returned a positive value) have been rewritten
+  =Fixed an issue where Split Speed and Walljump boots were being dectected as present in non-map rando roms, such as vanilla or the Practice Hack
+  =Layouts other than the Full Tracker now also allow you to change the Objective setting, following the new Objective autotracking
+  This update is brought to you almost entirely by nn_357, very special thanks to them!
 v1.9.1.0
   =Fixed the tracker not saving and loading Lua items properly
   =Fixed Walljump Boots and Blue/Spark Boosters being detected when they're not present and vice versa, which was done on purpose due to a bug on my side. Thanks to Ayt and nn44 for the help dealing with this!

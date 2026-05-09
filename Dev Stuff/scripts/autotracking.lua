@@ -13,8 +13,6 @@ end
 print("---------------------------------------------------------------------")
 print("")
 
---Variable used for communicating between the charge beam item and the charge upgrade count.
-hasChargeBeam = false
 
 U8_READ_CACHE = 0
 U8_READ_CACHE_ADDRESS = 0
@@ -61,43 +59,101 @@ end
 
 -- ******************** Helper functions for updating items and locations
 
-function updateSectionChestCountFromByteAndFlag(segment, locationRef, address, flag, callback)
-    local location = Tracker:FindObjectForCode(locationRef)
-    if location then
-        -- Do not auto-track this if the user has manually modified it
-        if location.Owner.ModifiedByUser then
-            if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-                print("* Skipping user modified location: ", locationRef)
-            end
-            return
-        end
+local checksum=0x0000 -- gamechecksum lives here, we can use it to detect if the game changed.
 
-        local value = ReadU8(segment, address)
-        local check = value & flag
+function checkHeader()
+    InvalidateReadCaches()
+    local address = 0x80FFCD
+    local header = AutoTracker:ReadU8(address, 0)
 
-        if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-            print("Updating chest count:", locationRef, string.format('0x%x', address),
-                    string.format('0x%x', value), string.format('0x%x', flag), check ~= 0)
-        end
+    if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+        -- Print whether MapRando is detected and the header value in hex
+        local status = (header == 0x4D) and "Detected Maprando!" or "Not Maprando!"
+        print(string.format("*** %s Header: 0x%02X", status, header))
+    end
 
-        if check ~= 0 then
-            location.AvailableChestCount = 0
-            if callback then
-                callback(true)
-            end
-        else
-            location.AvailableChestCount = location.ChestCount
-            if callback then
-                callback(false)
-            end
+    return header == 0x4D
+end
+
+function gamechecksum(segment)
+    InvalidateReadCaches()
+    local chksum = AutoTracker:ReadU16(0x80FFDE, 0)
+    if chksum ~= checksum then
+        checksum = chksum
+        print "New game detected"
+        updateToggles(segment)
+    end
+    updateSpecialToggles(segment)
+end
+
+function updateToggles(segment)
+    InvalidateReadCaches() 
+    if checkHeader() then
+        -- If header is MapRando, run WJB/SplitSpeed
+            --updateSpecialToggles(segment)
+            updateProgressiveFromByte("difficulty",      0xDFFF09)
+            updateProgressiveFromByte("itemprogression", 0xDFFF0A)
+            updateProgressiveFromByte("QualityOfLife",   0xDFFF0B)
+            updateProgressiveFromByte("objectives",      0xDFFF0C)
+            updateProgressiveFromByte("maplayout",       0xDFFF0D)
+    else
+        -- If header is NOT MapRando turn them off (incase they were on from a previous split speed seed etc)
+        if toggleWalljumpBoots then
+          toggleWalljumpBoots:setActive(false)
         end
-    elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-        print("***ERROR*** Couldn't find location:", locationRef)
+        if toggleSpeedBoosterSplit then
+          toggleSpeedBoosterSplit:setActive(false)
+        end
+    end
+
+    return true
+end
+
+function updateSpecialToggles(segment)
+    local specialbitflag = AutoTracker:ReadU8(0xDFFF05, 0)
+    -- some of these are not toggleable on the full tracker layout for some reason..?
+    
+    if toggleWalljumpBoots then
+      toggleWalljumpBoots:setActive((specialbitflag & 0x01) ~= 0)
+    end
+    
+    if toggleSpeedBoosterSplit then
+        toggleSpeedBoosterSplit:setActive((specialbitflag & 0x02) ~= 0)
+    end
+end
+
+function updateProgressiveFromByte(code, address)
+    local obj = Tracker:FindObjectForCode(code)
+
+    if not obj then
+        return
+    end
+
+    local value = AutoTracker:ReadU8(address, 0)
+    if value == 0x00 then --custom
+        local lastStageIndex = obj.Stages.Count - 1  
+        obj.CurrentStage = lastStageIndex
+        return
+    end
+
+    if value == 0xFF then --not set
+        return
+    end
+
+    obj.CurrentStage = value - 1
+
+    if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+        print(string.format(
+            "*** %s value=0x%02X stage=%d",
+            code,
+            value,
+            obj.CurrentStage
+        ))
     end
 end
 
 function updateAmmoFrom2Bytes(segment, code, address)
-	print("starting ammo function")
+	
     local item = Tracker:FindObjectForCode(code)
     local value = ReadU16(segment, address)
 
@@ -127,78 +183,122 @@ function updateAmmoFrom2Bytes(segment, code, address)
 end
 
 function updateToggleItemFromByteAndFlag(segment, code, address, flag)
-	--print("starting item function")
     local item = Tracker:FindObjectForCode(code)
-
-    if item then
-        local value = ReadU8(segment, address)
-
-        local flagTest = value & flag
-
+    
+    if not item then
         if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-            print("Item:", item.Name, string.format("0x%x", address), string.format("0x%x", value),
-            string.format("0x%x", flag), flagTest ~= 0)
+            print("***ERROR*** Couldn't find item:", code)
         end
-
-		if flagTest ~= 0 then
-		    hasChargeBeam = true
-		end
-
-		if code == "chargebeam" then
-            --Reset the variable so we can have the correct status upon a death.
-            hasChargeBeam = false
-            if flagTest ~= 0 then
-                hasChargeBeam = true
-        end
-
-        elseif flagTest ~= 0 then
-            print(item.Name)
-
-            if item.Name == "ToggleWalljumpBoots" then
-                toggleWalljumpBoots:setActive(true)
-                return
-            elseif item.Name == "ToggleSpeedBoosterSplit" then
-                toggleSpeedBoosterSplit:setActive(true)
-                return
-            elseif item.Name == "SwitchSpeed" then
-                switchSpeed:setActive(true)
-                return
-            end
-
-            if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or code == "eye" then
-                item.CurrentStage = 1
-            elseif code == "ridleyfull" or code == "draygonfull" or code == "phantoonfull" or code == "kraidfull" or code == "bombtorizofull" or code == "sporespawnfull" or code == "crocomirefull" or code == "botwoonfull" or code == "goldentorizofull" or code == "metroids1full" or code == "metroids2full" or code == "metroids3full" or code == "metroids4full" or code == "bowlingchozofull" or code == "acidchozofull" or code == "pitpiratesfull" or code == "babykraidpiratesfull" or code == "plasmapiratesfull" or code == "metalpiratesfull" then
-                item.Active = false
-            elseif code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then --or code == "kraidfull" then
-                item.Active = true
-            else
-                --item.Active = false
-            end
-        else
-            if item.Name == "ToggleWalljumpBoots" then
-                toggleWalljumpBoots:setActive(false)
-                return
-            elseif item.Name == "ToggleSpeedBoosterSplit" then
-                toggleSpeedBoosterSplit:setActive(false)
-                return
-            elseif item.Name == "SwitchSpeed" then
-                switchSpeed:setActive(false)
-                return
-            end
-
-            if code == "ridley" or code == "draygon" or code == "phantoon" or code == "kraid" or code == "bombtorizo" or code == "sporespawn" or code == "crocomire" or code == "botwoon" or code == "goldentorizo" or code == "metroids1" or code == "metroids2" or code == "metroids3" or code == "metroids4" or code == "bowlingchozo" or code == "acidchozo" or code == "pitpirates" or code == "babykraidpirates" or code == "plasmapirates" or code == "metalpirates" or code == "eye" then
-                item.CurrentStage = 0
-            elseif code == "ridleyfull" or code == "draygonfull" or code == "phantoonfull" or code == "kraidfull" or code == "bombtorizofull" or code == "sporespawnfull" or code == "crocomirefull" or code == "botwoonfull" or code == "goldentorizofull" or code == "metroids1full" or code == "metroids2full" or code == "metroids3full" or code == "metroids4full" or code == "bowlingchozofull" or code == "acidchozofull" or code == "pitpiratesfull" or code == "babykraidpiratesfull" or code == "plasmapiratesfull" or code == "metalpiratesfull" then
-                item.Active = true
-            elseif code ~= "etank" or code ~= "missile" or code ~= "super" or code ~= "pb" or code ~= "reservetank" then -- or code == "kraidfull" then
-                item.Active = false
-            else
-                --item.Active = true
-            end
-        end
-    elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-        print("***ERROR*** Couldn't find item: ", code)
+        return
     end
+
+    local value = ReadU8(segment, address)
+    local active = (value & flag) ~= 0
+
+    if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+        print(
+            "Item:",
+            item.Name,
+            string.format("0x%x", address),
+            string.format("0x%x", value),
+            string.format("0x%x", flag),
+            active
+        )
+    end
+
+    --------------------------------------------------
+    -- Split Speed
+    --------------------------------------------------
+
+   if code == "switchSpeed" then
+        switchSpeed:setActive(active)
+        return
+   end
+
+    --------------------------------------------------
+    -- Boss / objective stage items
+    --------------------------------------------------
+
+    local stageItems = {
+        ridley = true,
+        draygon = true,
+        phantoon = true,
+        kraid = true,
+        bombtorizo = true,
+        sporespawn = true,
+        crocomire = true,
+        botwoon = true,
+        goldentorizo = true,
+        metroids1 = true,
+        metroids2 = true,
+        metroids3 = true,
+        metroids4 = true,
+        bowlingchozo = true,
+        acidchozo = true,
+        pitpirates = true,
+        babykraidpirates = true,
+        plasmapirates = true,
+        metalpirates = true,
+        eye = true
+    }
+
+    if stageItems[code] then
+        item.CurrentStage = active and 1 or 0
+        return
+    end
+
+    --------------------------------------------------
+    -- Inverse full tracker items
+    --------------------------------------------------
+
+    local inverseItems = {
+        ridleyfull = true,
+        draygonfull = true,
+        phantoonfull = true,
+        kraidfull = true,
+        bombtorizofull = true,
+        sporespawnfull = true,
+        crocomirefull = true,
+        botwoonfull = true,
+        goldentorizofull = true,
+        metroids1full = true,
+        metroids2full = true,
+        metroids3full = true,
+        metroids4full = true,
+        bowlingchozofull = true,
+        acidchozofull = true,
+        pitpiratesfull = true,
+        babykraidpiratesfull = true,
+        plasmapiratesfull = true,
+        metalpiratesfull = true
+    }
+
+    if inverseItems[code] then
+        item.Active = not active
+        return
+    end
+
+    --------------------------------------------------
+    -- Ignore ammo items
+    --------------------------------------------------
+
+    local ammoItems = {
+        etank = true,
+        missile = true,
+        super = true,
+        pb = true,
+        reservetank = true
+    }
+
+    if ammoItems[code] then
+        return
+    end
+
+    --------------------------------------------------
+    -- Default toggle items
+    --------------------------------------------------
+
+    item.Active = active
 end
 
 
@@ -211,52 +311,38 @@ function updateItems(segment)
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
         InvalidateReadCaches()
         local address = 0x7e09a2
-
-        updateToggleItemFromByteAndFlag(segment, "charge", address + 0x07, 0x10)
-
+        
+        -- Suits --
         updateToggleItemFromByteAndFlag(segment, "varia", address + 0x02, 0x01)
-        updateToggleItemFromByteAndFlag(segment, "spring", address + 0x02, 0x02)
-        updateToggleItemFromByteAndFlag(segment, "morph", address + 0x02, 0x04)
-        updateToggleItemFromByteAndFlag(segment, "screw", address + 0x02, 0x08)
         updateToggleItemFromByteAndFlag(segment, "gravity", address + 0x02, 0x20)
-
+        
+        -- Misc --
+        updateToggleItemFromByteAndFlag(segment, "morph", address + 0x02, 0x04)
+        updateToggleItemFromByteAndFlag(segment, "bomb", address + 0x03, 0x10)
+        updateToggleItemFromByteAndFlag(segment, "spring", address + 0x02, 0x02)
+        updateToggleItemFromByteAndFlag(segment, "screw", address + 0x02, 0x08)
+        
+        -- Boots --
         updateToggleItemFromByteAndFlag(segment, "hijump", address + 0x03, 0x01)
         updateToggleItemFromByteAndFlag(segment, "space", address + 0x03, 0x02)
-        updateToggleItemFromByteAndFlag(segment, "walljumpBoots", address + 0x03, 0x04)
-        updateToggleItemFromByteAndFlag(segment, "bomb", address + 0x03, 0x10)
-
-        if defaultIcon then
+        if switchSpeed.defaultIcon then
             updateToggleItemFromByteAndFlag(segment, "switchSpeed", address + 0x03, 0x20)
         else
             updateToggleItemFromByteAndFlag(segment, "switchSpeed", address + 0x02, 0x40)
         end
-
         updateToggleItemFromByteAndFlag(segment, "spark", address + 0x02, 0x80)
-        updateToggleItemFromByteAndFlag(segment, "grapple", address + 0x03, 0x40)
-        updateToggleItemFromByteAndFlag(segment, "xray", address + 0x03, 0x80)
-
-        updateToggleItemFromByteAndFlag(segment, "wave", address + 0x06, 0x01)
+        updateToggleItemFromByteAndFlag(segment, "walljumpBoots", address + 0x03, 0x04)
+        
+        -- Beams --
+        updateToggleItemFromByteAndFlag(segment, "charge", address + 0x07, 0x10)
         updateToggleItemFromByteAndFlag(segment, "ice", address + 0x06, 0x02)
+        updateToggleItemFromByteAndFlag(segment, "wave", address + 0x06, 0x01)
         updateToggleItemFromByteAndFlag(segment, "spazer", address + 0x06, 0x04)
         updateToggleItemFromByteAndFlag(segment, "plasma", address + 0x06, 0x08)
-        --updateToggleItemFromByteAndFlag(segment, "charge", 0x7e09a2 + 0x07, 0x10)
-        updateToggleItemFromByteAndFlag(segment, "charge", address + 0x07, 0x10)
         
-    end
-    return true
-end
-
-function updateToggles(segment)
-    if not isInGame() then
-        return false
-    end
-    if AUTOTRACKER_ENABLE_ITEM_TRACKING then
-        InvalidateReadCaches()
-        local address = 0xDFFF05
-        --print("FUCK")
-
-        updateToggleItemFromByteAndFlag(segment, "toggleWalljumpBoots", address, 0x01)
-        updateToggleItemFromByteAndFlag(segment, "toggleSpeedBoosterSplit", address, 0x02)
+        -- HUD  -- 
+        updateToggleItemFromByteAndFlag(segment, "grapple", address + 0x03, 0x40)
+        updateToggleItemFromByteAndFlag(segment, "xray", address + 0x03, 0x80)
 
     end
     return true
@@ -345,136 +431,8 @@ function updateBosses(segment)
     return true
 end
 
-function updateRooms(segment)
-    if not isInGame() then
-        return false
-    end
-    if AUTOTRACKER_ENABLE_LOCATION_TRACKING then
-        InvalidateReadCaches()
-        local address = 0x7ed870
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Power Bomb (Crateria surface)/Minor Item", address + 0x0, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (outside Wrecked Ship bottom)/Minor Item", address + 0x0, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (outside Wrecked Ship top)/Minor Item", address + 0x0, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (outside Wrecked Ship middle)/Minor Item", address + 0x0, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Crateria moat)/Minor Item", address + 0x0, 0x10)
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Gauntlet/Major Item", address + 0x0, 0x20)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Crateria bottom)/Minor Item", address + 0x0, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Bomb Torizo/Major Item", address + 0x0, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Terminator/Major Item", address + 0x1, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@After Gauntlet/Minor Item (right)", address + 0x1, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@After Gauntlet/Minor Item (left)", address + 0x1, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Super Missile (Crateria)/Minor Item", address + 0x1, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Crateria middle)/Minor Item", address + 0x1, 0x10)
-        updateSectionChestCountFromByteAndFlag(segment, "@Power Bomb (green Brinstar bottom)/Minor Item", address + 0x1, 0x20)
-        updateSectionChestCountFromByteAndFlag(segment, "@Super Missile (pink Brinstar)/Minor Item", address + 0x1, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (green Brinstar below super missile)/Minor Item", address + 0x1, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Super Missile (green Brinstar top)/Minor Item", address + 0x2, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@Reserve Tank, Brinstar/Major Item", address + 0x2, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Behind Brinstar Reserve/Minor Item (back)", address + 0x2, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Behind Brinstar Reserve/Minor Item (front)", address + 0x2, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (pink Brinstar top)/Minor Item", address + 0x2, 0x20)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (pink Brinstar bottom)/Minor Item", address + 0x2, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Charge Beam/Major Item", address + 0x2, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Power Bomb (pink Brinstar)/Minor Item", address + 0x3, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (green Brinstar pipe)/Minor Item", address + 0x3, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Morphing Ball/Major Item", address + 0x3, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Power Bomb (blue Brinstar)/Minor Item", address + 0x3, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (blue Brinstar middle)/Minor Item", address + 0x3, 0x10)
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Brinstar Ceiling/Major Item", address + 0x3, 0x20)
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Etecoons/Major Item", address + 0x3, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Super Missile (green Brinstar bottom)/Minor Item", address + 0x3, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Waterway/Major Item", address + 0x4, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (blue Brinstar bottom)/Minor Item", address + 0x4, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Brinstar Gate/Major Item", address + 0x4, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missiles (blue Brinstar top)/Minor Item (front)", address + 0x4, 0x10)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missiles (blue Brinstar top)/Minor Item (back)", address + 0x4, 0x20)
-        updateSectionChestCountFromByteAndFlag(segment, "@X-Ray Scope/Major Item", address + 0x4, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Power Bomb (red Brinstar sidehopper room)/Minor Item", address + 0x4, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Power Bomb (red Brinstar spike room)/Minor Item", address + 0x5, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (red Brinstar spike room)/Minor Item", address + 0x5, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Spazer/Major Item", address + 0x5, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Kraid/Major Item", address + 0x5, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Kraid)/Minor Item", address + 0x5, 0x10)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Varia Suit/Major Item", address + 0x6, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (lava room)/Minor Item", address + 0x6, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Ice Beam/Major Item", address + 0x6, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (below Ice Beam)/Minor Item", address + 0x6, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Crocomire/Major Item", address + 0x6, 0x10)
-        updateSectionChestCountFromByteAndFlag(segment, "@Hi-Jump Boots/Major Item", address + 0x6, 0x20)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (above Crocomire)/Minor Item", address + 0x6, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Hi-Jump Boots)/Minor Item", address + 0x6, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank (Hi-Jump Boots)/Minor Item", address + 0x7, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@Power Bomb (Crocomire)/Minor Item", address + 0x7, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (below Crocomire)/Minor Item", address + 0x7, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Grapple Beam)/Minor Item", address + 0x7, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Grapple Beam/Major Item", address + 0x7, 0x10)
-        updateSectionChestCountFromByteAndFlag(segment, "@Reserve Tank, Norfair/Major Item", address + 0x7, 0x20)
-        updateSectionChestCountFromByteAndFlag(segment, "@Reserve Tank, Norfair/Minor Item", address + 0x7, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (bubble Norfair green door)/Minor Item", address + 0x7, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (bubble Norfair)/Minor Item", address + 0x8, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Speed Booster)/Minor Item", address + 0x8, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Speed Booster/Major Item", address + 0x8, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Wave Beam)/Minor Item", address + 0x8, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Wave Beam/Major Item", address + 0x8, 0x10)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Gold Torizo)/Minor Item", address + 0x8, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Super Missile (Gold Torizo)/Minor Item", address + 0x8, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Mickey Mouse room)/Minor Item", address + 0x9, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (lower Norfair above fire flea room)/Minor Item", address + 0x9, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Power Bomb (lower Norfair above fire flea room)/Minor Item", address + 0x9, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Power Bomb (Power Bombs of shame)/Minor Item", address + 0x9, 0x10)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (lower Norfair near Wave Beam)/Minor Item", address + 0x9, 0x20)
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Ridley/Major Item", address + 0x9, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Screw Attack/Major Item", address + 0x9, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Firefleas/Major Item", address + 0xa, 0x01)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Wrecked Ship middle)/Minor Item", address + 0x10, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@Reserve Tank, Wrecked Ship/Major Item", address + 0x10, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Gravity Suit)/Minor Item", address + 0x10, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Wrecked Ship top)/Minor Item", address + 0x10, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Wrecked Ship/Major Item", address + 0x10, 0x10)
-        updateSectionChestCountFromByteAndFlag(segment, "@Super Missile (Wrecked Ship left)/Minor Item", address + 0x10, 0x20)
-        updateSectionChestCountFromByteAndFlag(segment, "@Right Super, Wrecked Ship/Major Item", address + 0x10, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Gravity Suit/Major Item", address + 0x10, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (green Maridia shinespark)/Minor Item", address + 0x11, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@Super Missile (green Maridia)/Minor Item", address + 0x11, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Mama turtle/Major Item", address + 0x11, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (green Maridia tatori)/Minor Item", address + 0x11, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Watering Hole/Minor Item (left)", address + 0x11, 0x10)
-        updateSectionChestCountFromByteAndFlag(segment, "@Watering Hole/Minor Item (right)", address + 0x11, 0x20)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (yellow Maridia false wall)/Minor Item", address + 0x11, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Plasma Beam/Major Item", address + 0x11, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@West Sand Hole/Minor Item", address + 0x12, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@West Sand Hole/Major Item", address + 0x12, 0x02)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (right Maridia sand pit room)/Minor Item", address + 0x12, 0x04)
-        updateSectionChestCountFromByteAndFlag(segment, "@Power Bomb (right Maridia sand pit room)/Minor Item", address + 0x12, 0x08)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (pink Maridia)/Minor Item", address + 0x12, 0x10)
-        updateSectionChestCountFromByteAndFlag(segment, "@Super Missile (pink Maridia)/Minor Item", address + 0x12, 0x20)
-        updateSectionChestCountFromByteAndFlag(segment, "@Spring Ball/Major Item", address + 0x12, 0x40)
-        updateSectionChestCountFromByteAndFlag(segment, "@Missile (Draygon)/Minor Item", address + 0x12, 0x80)
-
-        updateSectionChestCountFromByteAndFlag(segment, "@Energy Tank, Botwoon/Major Item", address + 0x13, 0x01)
-        updateSectionChestCountFromByteAndFlag(segment, "@Space Jump/Major Item", address + 0x13, 0x04)
-    end
-    return true
-end
-
-
 -- *************************** Setup memory watches
-ScriptHost:AddMemoryWatch("SM ROM Data", 0xDFFF05, 0x01, updateToggles)
+ScriptHost:AddMemoryWatch("SM ROM Data",  0x80FFDE, 0x02, gamechecksum)
 ScriptHost:AddMemoryWatch("SM Item Data", 0x7e09a0, 0x70, updateItems)
 ScriptHost:AddMemoryWatch("SM Ammo Data", 0x7e09c2, 0x16, updateAmmo)
 ScriptHost:AddMemoryWatch("SM Boss Data", 0x7ed820, 0x10, updateBosses)
-ScriptHost:AddMemoryWatch("SM Room Data", 0x7ed870, 0x20, updateRooms)

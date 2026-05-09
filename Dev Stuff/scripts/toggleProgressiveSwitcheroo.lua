@@ -64,7 +64,7 @@ function ToggleProgressiveSwitcheroo:updateIcon()
         --else --Consumable
         ----not yet implemented
         --end
-        defaultIcon = false
+        switchSpeed.defaultIcon = false
         speedSwitch:updateIcon()
 
         --self.objectToSwitch.setv = false
@@ -82,8 +82,9 @@ function ToggleProgressiveSwitcheroo:updateIcon()
         self.objectToDisable.IgnoreUserInput = false
     else
         --self.objectToSwitch.defaultIcon = true
-        defaultIcon = true
-        speedSwitch:updateIcon()
+        switchSpeed.defaultIcon = true
+        print(speedSwitch == nil, "a")
+        switchSpeed:updateIcon()
         
         self.ItemInstance.Icon = self.disabledImage
     
@@ -129,8 +130,8 @@ function ToggleProgressiveSwitcheroo:save()
 
     local data = {}
     data["active"] = self:getActive()
-    data["defaultIcon"] = defaultIcon
-    data["activeSwitch"] = speedSwitch:getActive()
+    data["defaultIcon"] = switchSpeed.defaultIcon
+    data["activeSwitch"] = switchSpeed:getActive()
     data["objectToDisable"] = self.objectToDisable.Active
     return data
 end
@@ -141,10 +142,10 @@ function ToggleProgressiveSwitcheroo:load(data)
         self:updateIcon()
         self.objectToDisable.Active = data["objectToDisable"]
         defaultIcon = data["defaultIcon"]
-        speedSwitch:setActive(data["activeSwitch"])
-        print(defaultIcon)
+        switchSpeed:setActive(data["activeSwitch"])
+        print(switchSpeed.defaultIcon)
         print("dafa")
-        speedSwitch:updateIcon()
+        switchSpeed:updateIcon()
     end
     return true
 end

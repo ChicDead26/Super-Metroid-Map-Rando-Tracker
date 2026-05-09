@@ -34,6 +34,12 @@
         "img": "images/prog_desolate.png",
         "inherit_codes": "false",
         "codes": "desolate"
+      },
+      {
+        "name": "Custom",
+        "img": "images/prog_custom.png",
+        "inherit_codes": "false",
+        "codes": "prog_custom"
       }
     ]
   }

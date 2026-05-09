@@ -8,13 +8,11 @@
       {
         "name": "Off",
         "img": "images/qol_off.png",
-        "inherit_codes": "false",
         "codes": "qualityoflife, off"
       },
       {
         "name": "Low",
         "img": "images/qol_low.png",
-        "inherit_codes": "false",
         "codes": "low"
       },
       {
@@ -26,14 +24,18 @@
       {
         "name": "High",
         "img": "images/qol_high.png",
-        "inherit_codes": "false",
-        "codes": "default"
+        "codes": "high"
       },
       {
         "name": "Max",
         "img": "images/qol_max.png",
-        "inherit_codes": "false",
         "codes": "max"
+      },
+      {
+        "name": "Custom",
+        "img": "images/qol_custom.png",
+        "inherit_codes": "false",
+        "codes": "qol_custom"
       }
     ]
   }

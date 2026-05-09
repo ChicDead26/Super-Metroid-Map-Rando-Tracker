@@ -98,52 +98,51 @@
     ]
   },
   {
-    "name": "Objectives",
+    "name": "objectives",
     "type": "progressive",
     "allow_disabled": "false",
     "loop": "true",
     "stages": [
       {
+        "name": "None",
+        "img": "images/obj_none.png",
+        "codes": "non"
+      },
+      {
         "name": "Boss",
         "img": "images/obj_bosses.png",
-        "inherit_codes": "false",
-        "codes": "objectives, boss"
+        "codes": "objectives, bosses"
       },
       {
         "name": "Miniboss",
         "img": "images/obj_minibosses.png",
-        "inherit_codes": "false",
         "codes": "miniboss"
-      },
-      {
-        "name": "Metroid",
-        "img": "images/obj_metroids.png",
-        "inherit_codes": "false",
-        "codes": "metroid"
       },
       {
         "name": "Chozo",
         "img": "images/obj_chozos.png",
-        "inherit_codes": "false",
         "codes": "chozo"
       },
       {
         "name": "Pirate",
         "img": "images/obj_pirates.png",
-        "inherit_codes": "false",
         "codes": "pirate"
+      },
+      {
+        "name": "Metroid",
+        "img": "images/obj_metroids.png",
+        "codes": "metroid"
       },
       {
         "name": "Random",
         "img": "images/obj_random.png",
-        "inherit_codes": "false",
         "codes": "rando"
       },
       {
-        "name": "None",
-        "img": "images/obj_none.png",
+        "name": "Custom",
+        "img": "images/obj_custom.png",
         "inherit_codes": "false",
-        "codes": "non"
+        "codes": "obj_custom"
       }
     ]
   }

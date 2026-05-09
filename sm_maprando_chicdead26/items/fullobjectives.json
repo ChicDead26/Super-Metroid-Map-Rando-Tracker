@@ -174,7 +174,7 @@
       {
         "img": "images/ChozoStatue1E.png",
         "disabled_img": "images/ChozoStatue1D.png",
-        "codes": "bowlingchozo,chozos"
+        "codes": "bowlingchozofull"
       },
       {
         "img": "images/ChozoStatue1E.png",
@@ -193,7 +193,7 @@
       {
         "img": "images/ChozoStatue2E.png",
         "disabled_img": "images/ChozoStatue2D.png",
-        "codes": "acidchozo, chozos"
+        "codes": "acidchozofull"
       },
       {
         "img": "images/ChozoStatue2E.png",
