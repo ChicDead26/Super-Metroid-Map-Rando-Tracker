@@ -1,37 +1,26 @@
 ToggleSwitch = CustomItem:extend()
 
---local myImagePathObjectToDisable = ""
---local myCodeObjectToDisable = ""
---thingsToHide = {"eye", "phantoon", "walljumpBoots", "canWalljump"}
---objectToDisableImage = "images/walljumpboots.png"
---function ToggleProgressive:init(name, code, imagePath)
-
-
-
 function ToggleSwitch:init(name, code, imagePathA, imagePathB, defaultState, itemType)
     self:createItem(name)
     self.code = code
     self:setProperty("active", defaultState)
+    self:setProperty("defaultIcon", true)
     self.activeImage = ImageReference:FromPackRelativePath(imagePathA)
-    --self.disabledImage = ImageReference:FromPackRelativePath(imagePathADisabled)
     self.ItemInstance.PotentialIcon = self.activeImage
     self.defaultIcon = true
-    --speedSwitch = self--Don't think about it, don't worry about it
-    --myCodeObjectToDisable = codeObjectToDisable
-    --myImagePathObjectToDisable = imagePathObjectToDisable
-    --print("fuck")
-    --self.codeObjectToDisable = codeObjectToDisable
-    --self.imageDisabledA = ImageReference:FromPackRelativePath(imagePathDisabledA, "@disabled")
-
+    
     self.imageA = ImageReference:FromPackRelativePath(imagePathA)
     self.imageADisabled = ImageReference:FromPackRelativePath(imagePathA, "@disabled")
     self.imageB = ImageReference:FromPackRelativePath(imagePathB)
     self.imageBDisabled = ImageReference:FromPackRelativePath(imagePathB, "@disabled")
 
     self.itemType = itemType
-    --self.ItemInstance.Icon = self.disabledImage
     self.ItemInstance.Icon = self.activeImage
-    self:updateIcon()    
+    self:updateIcon()
+
+    self:propertyChanged(self.active, true)
+    self:propertyChanged(self.active, false)
+
 end
 
 function ToggleSwitch:setActive(active)
@@ -44,13 +33,13 @@ end
 
 function ToggleSwitch:updateIcon()
     if self:getActive() then
-        if self.defaultIcon then
+        if self:getProperty("defaultIcon") then
             self.ItemInstance.Icon = self.imageA
         else
             self.ItemInstance.Icon = self.imageB
         end
     else
-        if self.defaultIcon then
+        if self:getProperty("defaultIcon") then
             self.ItemInstance.Icon = self.imageADisabled
         else
             self.ItemInstance.Icon = self.imageBDisabled
@@ -58,7 +47,6 @@ function ToggleSwitch:updateIcon()
     end
 
     print(self:getActive())
-    print("this")
 end
 
 function ToggleSwitch:onLeftClick()
@@ -92,11 +80,9 @@ function ToggleSwitch:advanceToCode(code)
 end
 
 function ToggleSwitch:save()
-    print(self:getActive())
-
     local data = {}
     data["active"] = self:getActive()
-    
+    data["defaultIcon"] = self:getProperty("defaultIcon")
     return data
 end
 
@@ -104,8 +90,9 @@ function ToggleSwitch:load(data)
     if data["active"] ~= nil then
         
         self:setActive(data["active"])
+        self:setProperty(data["defaultIcon"])
     end
-    print(self:getActive())
+
     self:updateIcon()
     return true
 end

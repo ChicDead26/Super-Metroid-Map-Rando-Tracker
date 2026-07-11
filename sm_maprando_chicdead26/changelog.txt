@@ -1,3 +1,5 @@
+v1.9.2.1
+  =Fixed an issue where, due to an Emotracker update, the Split Speed no longer worked properly. Sorry it took me too long to fix it!
 v1.9.2.0
   +Objectives, Difficulty, Item Progression, Quality of Life and Map Layout can be autotracked now, starting in v122. You can change them if you don't like what it autotracks to!
   +Added new Custom setting for Objectives, Difficulty, Item Progression and Quality of Life

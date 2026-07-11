@@ -3,6 +3,8 @@ ScriptHost:LoadScript("scripts/class.lua")
 ScriptHost:LoadScript("scripts/custom_item.lua")
 ScriptHost:LoadScript("scripts/toggleToggle.lua")
 ScriptHost:LoadScript("scripts/toggleProgressive.lua")
+ScriptHost:LoadScript("scripts/toggleSwitch.lua")
+ScriptHost:LoadScript("scripts/toggleOneSwitchOther.lua")
 
 Tracker:AddItems("items/objectives.json")
 
@@ -42,12 +44,9 @@ end
 
 applyObjectiveDefaults()
 
-
 Tracker:AddItems("items/larvas.json")
 Tracker:AddItems("items/extras.json")
 
-ScriptHost:LoadScript("scripts/toggleSwitch.lua")
-ScriptHost:LoadScript("scripts/toggleProgressiveSwitcheroo.lua")
 
 if Tracker.ActiveVariantUID ~= "full" then
   toggleEye = ToggleToggle("ToggleEye", "toggleEye", "images/OffTracker/togglePlanetAwakenYes.png", "images/OffTracker/togglePlanetAwakenNo.png", "eye", "images/EyeE.png", true, 2)
@@ -64,8 +63,8 @@ end
 
 
 switchSpeed = ToggleSwitch("SwitchSpeed", "switchSpeed", "images/speed.png", "images/blue.png", false, 1)
-toggleSpeedBoosterSplit = ToggleProgressiveSwitcheroo("ToggleSpeedBoosterSplit", "toggleSpeedBoosterSplit", "images/OffTracker/toggleSpeedBoosterSplitYes.png", "images/OffTracker/toggleSpeedBoosterSplitNo.png", "speed", "spark", "images/blue.png", "images/speed.png", "images/spark.png", false, 1)
-
+print(switchSpeed ~= nil, "swispe")
+toggleSpeedBoosterSplit = ToggleOneSwitchOther("ToggleSpeedBoosterSplit", "toggleSpeedBoosterSplit", "images/OffTracker/toggleSpeedBoosterSplitYes.png", "images/OffTracker/toggleSpeedBoosterSplitNo.png", "speed", "spark", "images/blue.png", "images/speed.png", "images/spark.png", false, 1)
 Tracker:AddLayouts("layouts/tracker.json")
 Tracker:AddLayouts("layouts/broadcast.json")
 
