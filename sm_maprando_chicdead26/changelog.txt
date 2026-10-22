@@ -1,3 +1,5 @@
+v1.9.2.2
+  =Fixed an issue where, you guessed it, Split Speed wasn't working properly once again. Thank to nn_357 who contributed the entire patch!
 v1.9.2.1
   =Fixed an issue where, due to an Emotracker update, the Split Speed no longer worked properly. Sorry it took me too long to fix it!
 v1.9.2.0

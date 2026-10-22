@@ -75,12 +75,48 @@ function checkHeader()
     return header == 0x4D
 end
 
+function resetAllItems()
+    local toggles = {
+        "varia", "gravity", "morph", "bomb", "spring", "screw",
+        "hijump", "space", "spark", "walljumpBoots",
+        "charge", "ice", "wave", "spazer", "plasma", "grapple", "xray"
+    }
+    local stages = {
+        "ridley", "draygon", "phantoon", "kraid", "bombtorizo", "sporespawn",
+        "crocomire", "botwoon", "goldentorizo", "metroids1", "metroids2",
+        "metroids3", "metroids4", "bowlingchozo", "acidchozo", "pitpirates",
+        "babykraidpirates", "plasmapirates", "metalpirates", "eye"
+    }
+    local ammo = { "etank", "missile", "super", "pb", "reservetank" }
+
+    for _, code in ipairs(toggles) do
+        local item = Tracker:FindObjectForCode(code)
+        if item then item.Active = false end
+    end
+
+    switchSpeed:setActive(false)
+
+    for _, code in ipairs(stages) do
+        local item = Tracker:FindObjectForCode(code)
+        if item then item.CurrentStage = 0 end
+        -- "full" variants are inverse items: Active = true when not collected
+        local full = Tracker:FindObjectForCode(code .. "full")
+        if full then full.Active = true end
+    end
+
+    for _, code in ipairs(ammo) do
+        local item = Tracker:FindObjectForCode(code)
+        if item then pcall(function() item.AcquiredCount = 0 end) end
+    end
+end
+
 function gamechecksum(segment)
     InvalidateReadCaches()
     local chksum = AutoTracker:ReadU16(0x80FFDE, 0)
     if chksum ~= checksum then
         checksum = chksum
         print "New game detected"
+        resetAllItems()
         updateToggles(segment)
     end
     updateSpecialToggles(segment)
@@ -210,10 +246,15 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
     -- Split Speed
     --------------------------------------------------
 
-   if code == "switchSpeed" then
+    if code == "switchSpeed" then
         switchSpeed:setActive(active)
         return
-   end
+    end
+
+    -- Don't touch Spark when split speed is off, loading a regular speed seed after a split speed would cause the sparkbooster icon to come back on.
+    if code == "spark" and switchSpeed:getProperty("defaultIcon") then
+       return
+    end
 
     --------------------------------------------------
     -- Boss / objective stage items
@@ -325,11 +366,9 @@ function updateItems(segment)
         -- Boots --
         updateToggleItemFromByteAndFlag(segment, "hijump", address + 0x03, 0x01)
         updateToggleItemFromByteAndFlag(segment, "space", address + 0x03, 0x02)
-        if switchSpeed.defaultIcon then
-            updateToggleItemFromByteAndFlag(segment, "switchSpeed", address + 0x03, 0x20)
-        else
-            updateToggleItemFromByteAndFlag(segment, "switchSpeed", address + 0x02, 0x40)
-        end
+        local lo = AutoTracker:ReadU8(address + 0x02, 0)
+        local hi = AutoTracker:ReadU8(address + 0x03, 0)
+        switchSpeed:setActive((lo & 0x40) ~= 0 or (hi & 0x20) ~= 0)
         updateToggleItemFromByteAndFlag(segment, "spark", address + 0x02, 0x80)
         updateToggleItemFromByteAndFlag(segment, "walljumpBoots", address + 0x03, 0x04)
         
